@@ -15,3 +15,20 @@ RUTAS BACKEND
 |Get         |/restaurant | Página de perfil del restaurante.|
 
 
+
+
+
+Creado Modelo Aforo
+
+Rutas -
+
+
+
+Instalaciones -
+
+Moongose
+Express
+Npm Install
+React Doom
+
+Ver repo en Github
