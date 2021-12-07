@@ -7,7 +7,11 @@ const Restaurant = new Schema({
     direction: String, 
     description: String,
     priceRange: String,
-    capacity: Number, // Esto es así??
+    capacity: {
+        type: Number,
+        min: 1,
+        max: 2000
+    }, // Esto es así??
 
     imageURL: String,
     
@@ -37,6 +41,11 @@ const Restaurant = new Schema({
         },
         coordinates: [Number]
     }],
+    status: {
+        type: String,
+        enum: ['PENDING', 'ACCEPTED', 'REJECTED'],
+        default: 'PENDING'
+    }
 
 
    

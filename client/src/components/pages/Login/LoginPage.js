@@ -8,7 +8,7 @@ class LoginPage extends Component {
 
         this.state = {
             userName: "",
-            pasword: ""
+            password: ""
         }
 
         this.authService = new AuthService()
@@ -17,11 +17,10 @@ class LoginPage extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.authService.login(this.state.username, this.state.pasword)
+        this.authService.login(this.state.userName, this.state.password)
             .then(response => {
                 this.props.storeUser(response.data)
-
-                this.props.history.push("")
+                this.props.history.push("/")
 
             })
             .catch(err => console.log(err.response.data.message))
@@ -45,14 +44,14 @@ class LoginPage extends Component {
                             <hr />
 
                             <Form onSubmit={this.handleSubmit}>
-                                <Form.Group className="mb-3" controlId="username">
+                                <Form.Group className="mb-3" controlId="userName">
                                     <Form.Label>Username</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.username} name="username" type="text" placeholder="Elige un nombre de usuario" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.userName} name="userName" type="text" placeholder="Nombre de usuario" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="password">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.pwd} name="pwd" type="password" placeholder="Password" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" placeholder="Password" />
                                 </Form.Group>
 
                                 <Button variant="primary" type="submit">

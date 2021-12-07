@@ -3,11 +3,10 @@ const User = require("../models/User.model")
 const bcrypt = require("bcryptjs")
 const bcryptSalt = 10
 
-const User = require('../models/User.model')
 
 router.post('/signup', (req, res) => {
 
-    const { userName, email, password } = req.body
+    const { userName, password, email } = req.body
 
     User
         .findOne({ email })
@@ -22,7 +21,7 @@ router.post('/signup', (req, res) => {
             const hashPass = bcrypt.hashSync(password, salt)
 
             User
-                .create({ userName, email, password: hashPass })
+                .create({ userName, password: hashPass, email })
                 .then((user) => res.status(200).json(user))
                 .catch(err => res.status(500).json({ code: 500, message: 'DB error while creating user', err: err.message }))
         })

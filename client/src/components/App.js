@@ -1,7 +1,11 @@
 import { Component } from 'react'
 import AuthService from '../services/auth.service';
 import './App.css';
-import Navbar from './layaout/Navigation/Navbar'
+import Navbar from './layaout/Navigation/Navbar';
+import SignupPage from './pages/SignUp/SignUpPage';
+import LoginPage from './pages/Login/LoginPage';
+import { Switch, Route} from 'react-router-dom'
+ 
 
 class App extends Component{
   constructor(pros){
@@ -11,13 +15,28 @@ class App extends Component{
     this.authService = new AuthService()
   }
 
+  componentDidMount(){
+    this.authService.isloggedin()
+    .then(response => this.storeUser(response.data))
+    .catch(err => this.storeUser(null))
+  }
+
+  storeUser = (user) => {
+    this.setState({ loggedUser: user})
+  }
+
   render() {
     return (
-      <>
-      <Navbar>
+  
+      <div>
+      <Navbar storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
+          <Switch>
+                <Route path = "/signup" render={(props) => <SignupPage {...props} storeUser={this.storeUser} />} />
+                <Route path = "/login" render={(props) => <LoginPage {...props} storeUser={this.storeUser} />} />
 
-      </Navbar>
-      </>
+          </Switch>
+
+      </div>
     )
   }
 }

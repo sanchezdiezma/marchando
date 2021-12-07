@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Form, Button, Row, Col } from 'react-bootstrap'
 import AuthService from '../../../services/auth.service'
+import signupImg from '../../../assets/signup.jpg'
+
 
 class SignupPage extends Component {
     constructor(props) {
@@ -8,7 +10,7 @@ class SignupPage extends Component {
 
         this.state = {
             userName: "",
-            pasword: "",
+            password: "",
             email: "",
         }
 
@@ -18,11 +20,13 @@ class SignupPage extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.authService.signup(this.state.userName, this.state.pasword)
+        this.authService.signup(this.state.userName, this.state.password, this.state.email)
             .then(response => {
+                console.log(response.data)
                 this.props.storeUser(response.data)
+                this.props.history.push("/")
             })
-            .catch(err => console.log(err.response.data.message))
+            .catch(err => console.log(err.response.data.message))   
     }
 
     handleInputChange = (e) => {
@@ -37,6 +41,9 @@ class SignupPage extends Component {
                 <Row>
                     <Col md={{ span: 4, offset: 4 }}>
                         <h2>Registro</h2>
+                        <div>
+                            <img src={signupImg} alt="logoSignUp" />
+                        </div>
 
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Group className="mb-3" controlId="userName">
@@ -46,7 +53,7 @@ class SignupPage extends Component {
 
                             <Form.Group className="mb-3" controlId="password">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control onChange={this.handleInputChange} value={this.state.pasword} name="password" type="password" placeholder="Introduce tu Password" />
+                                <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" placeholder="Introduce tu Password" />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="email">

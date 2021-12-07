@@ -7,7 +7,7 @@ const userSchema = new Schema(
       required: [true, 'Nombre obligatorio'],
       default: 'Unknown name',
       minlength: 3,
-      maxlength: 100,
+      maxlength: 10,
       trim: true,
       set: value => value.charAt(0).toUpperCase() + value.substring(1).toLowerCase()
     },
