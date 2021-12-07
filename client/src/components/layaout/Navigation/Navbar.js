@@ -27,6 +27,7 @@ const Navigation = ({ loggedUser, storeUser }) => {
             <>
               <Nav.Link as={Link} to="/signup">Registro</Nav.Link>
               <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              <Nav.Link as={Link} to="/nuevo-restaurante">Acceso Restaurantes</Nav.Link>
             </>
           }
         </Nav>

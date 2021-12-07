@@ -10,7 +10,7 @@ const Restaurant = new Schema({
     capacity: {
         type: Number,
         min: 1,
-        max: 2000
+        max: 200
     }, // Esto es así??
 
     imageURL: String,
