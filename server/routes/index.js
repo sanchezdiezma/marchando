@@ -1,27 +1,33 @@
-const router = require("express").Router();
+module.exports = app => {
+  app.use("/auth", require("./auth.routes"));
+  app.use("/restaurantes", require("./restaurant.routes"));
+}
 
-router.get("/", (req, res, next) => {
-  res.json("All good in here");
-});
+// const router = require("express").Router();
 
-// Base routes
-const baseRoutes = require("./base.routes");
-router.use("/", baseRoutes);
+// router.get("/", (req, res, next) => {
+//   res.json("All good in here");
+// });
 
-// Auth routes
-const authRoutes = require("./auth.routes");
-router.use("/auth", authRoutes);
+// // Base routes
+// const baseRoutes = require("./base.routes");
+// router.use("/", baseRoutes);
 
-// Restaurant routes
-router.use("/Restaurantes", require("./restaurant.routes"));
+// // Auth routes
+// const authRoutes = require("./auth.routes");
+// router.use("/auth", authRoutes);
 
-// User routes
-router.use("/Usuarios", require("./user.routes"));
+// // Restaurant routes
+// router.use("/Restaurantes", require("./restaurant.routes"));
 
-// You put the next routes here 👇
-// example: router.use("/auth", authRoutes)
+// // User routes
+// router.use("/Usuarios", require("./user.routes"));
 
-module.exports = router;
+// // You put the next routes here 👇
+// // example: router.use("/auth", authRoutes)
+
+// module.exports = router;
+
 
 
 
