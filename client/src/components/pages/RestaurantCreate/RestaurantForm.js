@@ -7,27 +7,31 @@ class LoginPage extends Component {
         super(props)
 
         this.state = {
-            name: "",
-            direction: "",
-            description: "",
-            priceRange: "",
-            capacity: 50,
-            imageURL: "",
-            location: {
-                Type: "Point",
-                Coordinates: []
-            },
-            typeOfKitchen: []
+                name: "",
+                direction: "",
+                description: "",
+                priceRange: "",
+                capacity: 50,
+                imageURL: "",
+                location: {
+                    Type: "Point",
+                    Coordinates: []
+                },
+                typeOfKitchen: []
             
         }
 
         this.authService = new AuthService()
     }
 
+    handleSlider = (e) => {
+        this.setState({ priceRange: e.target.value}) 
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.authService.login(this.state.userName, this.state.password)
+        this.authService.login(this.state.name, this.state.password)
             .then(response => {
                 this.props.storeUser(response.data)
                 this.props.history.push("/")
@@ -69,10 +73,18 @@ class LoginPage extends Component {
                                     <Form.Control onChange={this.handleInputChange} value={this.state.password} name="description" type="text" placeholder="Descripción" />
                                 </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="priceRange">
+                                {/* <Form.Group className="mb-3" controlId="priceRange">
                                     <Form.Label>Rango de precios</Form.Label>
                                     <Form.Control onChange={this.handleInputChange} value={this.state.password} name="priceRange" type="text" placeholder="priceRange" />
-                                </Form.Group>
+                                </Form.Group> */}
+
+                                
+
+                                <>
+                                    <Form.Label>Rango de precios</Form.Label>
+                                    <option value={this.state.priceRange}>{this.state.priceRange}€</option>
+                                    <Form.Range onChange={this.handleSlider} value={this.state.priceRange}/>
+                                </>
 
                                 <Form.Group className="mb-3" controlId="capacity">
                                     <Form.Label>Aforo</Form.Label>

@@ -6,6 +6,7 @@ import SignupPage from './pages/SignUp/SignUpPage';
 import LoginPage from './pages/Login/LoginPage';
 import RestaurantForm from './pages/RestaurantCreate/RestaurantForm'
 import { Switch, Route} from 'react-router-dom'
+import Step from './shared/Stepper';
  
 
 class App extends Component{
