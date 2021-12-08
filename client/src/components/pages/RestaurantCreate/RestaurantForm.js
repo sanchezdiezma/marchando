@@ -7,7 +7,6 @@ class RestaurantForm extends Component {
         super(props)
 
         this.state = {
-<<<<<<< HEAD
                 name: "",
                 direction: "",
                 description: "",
@@ -19,20 +18,6 @@ class RestaurantForm extends Component {
                     Coordinates: []
                 },
                 typeOfKitchen: []
-=======
-            name: "",
-            direction: "",
-            description: "",
-            priceRange: "",
-            capacity: 0,
-            imageURL: "",
-            location: {
-                Type: "Point",
-                Coordinates: []
-            },
-            typeOfKitchen: [],
-            specialInfo:[]
->>>>>>> aae5a58dcd2710e4bc540f446ec924cab41bb72d
             
         }
 
@@ -46,11 +31,7 @@ class RestaurantForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-<<<<<<< HEAD
         this.authService.login(this.state.name, this.state.password)
-=======
-        this.restaurantService.createRestaurant(this.state)
->>>>>>> aae5a58dcd2710e4bc540f446ec924cab41bb72d
             .then(response => {
                 console.log(response.data)
                 this.props.history.push(`/restaurant/details/${response.data._id}`)
