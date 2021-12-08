@@ -5,6 +5,7 @@ import Navbar from './layaout/Navigation/Navbar';
 import SignupPage from './pages/SignUp/SignUpPage';
 import LoginPage from './pages/Login/LoginPage';
 import RestaurantForm from './pages/RestaurantCreate/RestaurantForm'
+import RestaurantPage from './pages/RestaurantList/RestaurantPage'
 import { Switch, Route} from 'react-router-dom'
 import Step from './shared/Stepper';
  
@@ -36,7 +37,7 @@ class App extends Component{
                 <Route path = "/signup" render={(props) => <SignupPage {...props} storeUser={this.storeUser} />} />
                 <Route path = "/login" render={(props) => <LoginPage {...props} storeUser={this.storeUser} />} />
                 <Route path = "/nuevo-restaurante" render={(props) => <RestaurantForm {...props} storeUser={this.storeUser} />} />
-
+                <Route path= "/restaurant/details/:id" render={(props) => <RestaurantPage {...props} storeUser={this.storeUser} />}/>
           </Switch>
 
       </div>
