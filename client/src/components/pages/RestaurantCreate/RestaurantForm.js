@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Form, Button, Row, Col } from 'react-bootstrap'
-import AuthService from '../../../services/auth.service'
+import RestaurantService from '../../../services/restaurant.service'
 
-class LoginPage extends Component {
+class RestaurantForm extends Component {
     constructor(props) {
         super(props)
 
@@ -11,29 +11,29 @@ class LoginPage extends Component {
             direction: "",
             description: "",
             priceRange: "",
-            capacity: 50,
+            capacity: 0,
             imageURL: "",
             location: {
                 Type: "Point",
                 Coordinates: []
             },
-            typeOfKitchen: []
+            typeOfKitchen: [],
+            specialInfo:[]
             
         }
 
-        this.authService = new AuthService()
+        this.restaurantService = new RestaurantService()
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.authService.login(this.state.userName, this.state.password)
+        this.restaurantService.createRestaurant(this.state)
             .then(response => {
-                this.props.storeUser(response.data)
-                this.props.history.push("/")
-
+                console.log(response.data)
+                this.props.history.push(`/restaurant/details/${response.data._id}`)
             })
-            .catch(err => console.log(err.response.data.message))
+            .catch(err => console.log(err))
     }
 
     handleInputChange = (e) => {
@@ -61,30 +61,31 @@ class LoginPage extends Component {
 
                                 <Form.Group className="mb-3" controlId="direction">
                                     <Form.Label>Direccion</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="direction" type="direction" placeholder="Direccion" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.direction} name="direction" type="direction" placeholder="Direccion" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="description">
                                     <Form.Label>Descripción</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="description" type="text" placeholder="Descripción" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.description} name="description" type="text" placeholder="Descripción" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="priceRange">
                                     <Form.Label>Rango de precios</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="priceRange" type="text" placeholder="priceRange" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.priceRange} name="priceRange" type="text" placeholder="Rango de precios" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="capacity">
                                     <Form.Label>Aforo</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="capacity" type="text" placeholder="capacity" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.capacity} name="capacity" type="text" placeholder="Aforo máximo" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="imageURL">
                                     <Form.Label>Imagen</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="imageURL" type="text" placeholder="imageURL" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.imageURL} name="imageURL" type="text" placeholder="Sube tu logo" />
                                 </Form.Group>
 
-                                <Form.Select className="mb-5" aria-label="typeOfKitchen">
+                                <Form.Select className="mb-3" aria-label="typeOfKitchen">
+                                    <Form.Label>Tipo de Cocina</Form.Label>   
                                     <option>Tipo de Cocina</option>
                                     <option value="ALEMANA">Alemana</option>
                                     <option value="ANDALUZA">Andaluza</option>
@@ -129,14 +130,14 @@ class LoginPage extends Component {
                                     <option value="VEGETARIANO">Vegetariano</option>
                                     <option value="VEGANO">Vegano</option>
                                     <option value="ALERGIAS">Alergias</option>
-                                    <option value="CELIACOS">Alergias</option>
+                                    <option value="CELIACOS">Celiacos</option>
                                 </Form.Select>
                                 
                                 
 
                                 <Form.Group className="mb-3" controlId="location">
                                     <Form.Label>Localización</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="location" type="text" placeholder="location" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.location} name="location" type="text" placeholder="Localización" />
                                 </Form.Group>
 
                                 
@@ -155,4 +156,4 @@ class LoginPage extends Component {
 
 }
 
-export default LoginPage
+export default RestaurantForm
