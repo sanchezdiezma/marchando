@@ -11,7 +11,7 @@ const Restaurant = new Schema({
         type: Number,
         min: 1,
         max: 200
-    }, // Esto es así??
+    }, 
 
     imageURL: String,
     

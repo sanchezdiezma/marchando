@@ -7,7 +7,7 @@ const userSchema = new Schema(
       required: [true, 'Nombre obligatorio'],
       default: 'Unknown name',
       minlength: 3,
-      maxlength: 10,
+      //maxlength: 10,
       trim: true,
       set: value => value.charAt(0).toUpperCase() + value.substring(1).toLowerCase()
     },
@@ -22,7 +22,7 @@ const userSchema = new Schema(
       trim: true,
       unique: true,
       required: [true, 'Email obligatorio'],
-      match: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,63})$/,
+      //match: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,63})$/,
     },
 
     role: {
