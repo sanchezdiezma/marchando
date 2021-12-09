@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./SignUpPage.css"
 import { Container, Form, Button, Row, Col } from 'react-bootstrap'
 import AuthService from '../../../services/auth.service'
 import signupImg from '../../../assets/signup.jpg'
@@ -40,39 +41,43 @@ class SignupPage extends Component {
     render() {
         return (
             <Container>
-                <Row>
-                    <Col md={{ span: 4, offset: 4 }}>
-                        <h2>Registro</h2>
-                        <div>
-                            <img src={signupImg} alt="logoSignUp" />
+                <Row className="justify-content-md-center align-items-center wrapper">
+                    <Col md={{ span: 4}}>
+                        <img className="img" src={signupImg} alt="logoSignUp" />
+                    </Col>
+                    <Col md={{ span: 4}}>
+                        <div className="main-form-container">
+                            <h2>Regístrate en Marchando</h2>
+
+                                <div className="form">
+
+                                <Form.Select className="mb-3" value={this.state.role} name="role" onChange={this.handleInputChange} aria-label="Default select example" controlId="role">
+                                    <option value="USER">Selecciona tu rol</option>
+                                    <option value="USER" >Usuario</option>
+                                    <option value="RESTAURANT" >Restaurante</option>
+                                </Form.Select>
+
+                                <Form onSubmit={this.handleSubmit}>
+                                    <Form.Group className="mb-3" controlId="userName">
+                                        <Form.Control onChange={this.handleInputChange} value={this.state.userName} name="userName" type="text" placeholder="Escribe un nombre de usuario" />
+                                    </Form.Group>
+
+                                    <Form.Group className="mb-3" controlId="password">
+                                        <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" placeholder="Escribe tu contraseña" />
+                                    </Form.Group>
+
+                                    <Form.Group className="mb-3" controlId="email">
+                                        <Form.Control onChange={this.handleInputChange} value={this.state.email} name="email" type="text" placeholder="Introduce tu email" />
+                                    </Form.Group>
+
+                                    
+
+                                    <Button id='button-custom' type="submit">
+                                        Marchando
+                                    </Button>
+                                </Form>
+                            </div>
                         </div>
-
-                        <Form onSubmit={this.handleSubmit}>
-                            <Form.Group className="mb-3" controlId="userName">
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control onChange={this.handleInputChange} value={this.state.userName} name="userName" type="text" placeholder="Elige un nombre de usuario" />
-                            </Form.Group>
-
-                            <Form.Group className="mb-3" controlId="password">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" placeholder="Introduce tu Password" />
-                            </Form.Group>
-
-                            <Form.Group className="mb-3" controlId="email">
-                                <Form.Label>email</Form.Label>
-                                <Form.Control onChange={this.handleInputChange} value={this.state.email} name="email" type="text" placeholder="Introduce tu email" />
-                            </Form.Group>
-
-                            <Form.Select value={this.state.role} name="role" onChange={this.handleInputChange} aria-label="Default select example" controlId="role">
-                              <option value="USER">Selecciona tu rol</option>
-                              <option value= "USER" >Usuario</option>
-                              <option value= "RESTAURANT" >Restaurante</option>
-                           </Form.Select>
-
-                            <Button variant="primary" type="submit">
-                                Submit
-                            </Button>
-                        </Form>
                     </Col>
                 </Row>
             </Container>

@@ -7,7 +7,9 @@ import LoginPage from './pages/Login/LoginPage';
 import RestaurantForm from './pages/RestaurantCreate/RestaurantForm'
 import RestaurantPage from './pages/RestaurantList/RestaurantPage'
 import { Switch, Route} from 'react-router-dom'
+import Home from '../components/pages/Index/Home'
 import Step from './shared/Stepper';
+import "./App.css"
  
 
 class App extends Component{
@@ -34,6 +36,7 @@ class App extends Component{
       <div>
       <Navbar storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
           <Switch>
+                <Route path = "/" exact strict render={() => <Home></Home>}></Route>
                 <Route path = "/signup" render={(props) => <SignupPage {...props} storeUser={this.storeUser} />} />
                 <Route path = "/login" render={(props) => <LoginPage {...props} storeUser={this.storeUser} />} />
                 <Route path = "/nuevo-restaurante" render={(props) => <RestaurantForm {...props} storeUser={this.storeUser} />} />

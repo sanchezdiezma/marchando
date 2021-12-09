@@ -1,0 +1,53 @@
+* {
+  margin:  0;
+  padding: 0;
+}
+
+
+
+.img {
+    max-width: 100%;
+    border-radius: 10px;
+    
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    color: coral;
+    
+    
+}
+
+.form {
+
+    margin-top: 50px;
+
+}
+    
+
+
+.main-form-container {
+    outline: solid 1px #ff8153;
+    border-radius: 10px;
+    padding: 40px;
+    height: 410px;
+    width: 410px;
+}
+
+.main-form-container h2 {
+
+    color: coral;
+    font-size: 1.5em;
+    white-space: pre;
+    margin-bottom:20px ;
+}
+
+
+/* element.style {
+    height: 50vh; 
+
+    object-fit: COVER; */

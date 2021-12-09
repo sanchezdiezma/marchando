@@ -15,11 +15,11 @@ const Navigation = ({ loggedUser, storeUser }) => {
   }
 
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar expand="lg" variant="light" bg="light">
       <Container>
-        <Navbar.Brand href="/">Navbar</Navbar.Brand>
+        <Navbar.Brand href="/"></Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+          <Nav.Link as={Link} to="/"> 🔥 Inicio</Nav.Link>
           <Nav.Link as={Link} to="/restaurantes">Restaurantes</Nav.Link>
           {loggedUser ?
           <>
