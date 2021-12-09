@@ -12,6 +12,7 @@ class SignupPage extends Component {
             userName: "",
             password: "",
             email: "",
+            role:""
         }
 
         this.authService = new AuthService()
@@ -20,7 +21,7 @@ class SignupPage extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.authService.signup(this.state.userName, this.state.password, this.state.email)
+        this.authService.signup(this.state.userName, this.state.password, this.state.email, this.state.role)
             .then(response => {
                 console.log(response.data)
                 this.props.storeUser(response.data)
@@ -30,8 +31,9 @@ class SignupPage extends Component {
     }
 
     handleInputChange = (e) => {
-        const { name, value } = e.currentTarget
 
+        const { name, value } = e.currentTarget
+        console.log('llamando a handleinputchange', name, value)
         this.setState({ [name]: value })
     }
 
@@ -60,6 +62,12 @@ class SignupPage extends Component {
                                 <Form.Label>email</Form.Label>
                                 <Form.Control onChange={this.handleInputChange} value={this.state.email} name="email" type="text" placeholder="Introduce tu email" />
                             </Form.Group>
+
+                            <Form.Select value={this.state.role} name="role" onChange={this.handleInputChange} aria-label="Default select example" controlId="role">
+                              <option value="USER">Selecciona tu rol</option>
+                              <option value= "USER" >Usuario</option>
+                              <option value= "RESTAURANT" >Restaurante</option>
+                           </Form.Select>
 
                             <Button variant="primary" type="submit">
                                 Submit

@@ -54,10 +54,9 @@ class RestaurantDetails extends Component {
                 <p>{direction}</p>
                 <hr />
                 <br />
-                <p> Hola {description}</p>
+                <p> {description}</p>
                 <p> {priceRange}</p>
-                <p>  {capacity}</p>
-                <p> {imageURL}</p>
+                <p> {capacity}</p>
                 <p> {typeOfKitchen}</p>
                 <p> {specialInfo}</p>
                 <p> {status}</p>

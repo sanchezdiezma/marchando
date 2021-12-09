@@ -8,7 +8,7 @@ class RestaurantService {
     })
   }
 
-//   getAllRestaurants = () => this.app.get("/allRestaurants")
+  getAllRestaurants = () => this.app.get("/allRestaurants")
   getOneRestaurant = (id) => this.app.get(`/${id}`)
   createRestaurant = (restaurantData) => this.app.post("/newRestaurant", restaurantData)
 }

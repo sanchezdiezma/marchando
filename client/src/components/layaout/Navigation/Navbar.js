@@ -22,12 +22,21 @@ const Navigation = ({ loggedUser, storeUser }) => {
           <Nav.Link as={Link} to="/">Inicio</Nav.Link>
           <Nav.Link as={Link} to="/restaurantes">Restaurantes</Nav.Link>
           {loggedUser ?
+          <>
             <Nav.Link as={"span"} onClick={logout}>Logout</Nav.Link>
+           {
+             loggedUser.role === 'RESTAURANT' &&
+            <Nav.Link as={Link} to="/nuevo-restaurante">Crear Restaurante</Nav.Link>
+           }
+            {
+              loggedUser.role === 'ADMIN' &&
+            <Nav.Link as={Link} to="/nuevo-restaurante">Página admin</Nav.Link>
+            }
+          </>
             :
             <>
               <Nav.Link as={Link} to="/signup">Registro</Nav.Link>
               <Nav.Link as={Link} to="/login">Login</Nav.Link>
-              <Nav.Link as={Link} to="/nuevo-restaurante">Crear Restaurante</Nav.Link>
             </>
           }
         </Nav>

@@ -6,7 +6,7 @@ const bcryptSalt = 10
 
 router.post('/signup', (req, res) => {
 
-    const { userName, password, email } = req.body
+    const { userName, password, email, role } = req.body
 
     User
         .findOne({ email })
@@ -23,7 +23,7 @@ router.post('/signup', (req, res) => {
             console.log(userName, hashPass, email)
 
             User
-                .create({ userName, password: hashPass, email })
+                .create({ userName, password: hashPass, email, role })
                 .then((user) => res.status(200).json(user))
                 .catch(err => res.status(500).json({ code: 500, message: 'DB error while creating user', err: err.message }))
         })

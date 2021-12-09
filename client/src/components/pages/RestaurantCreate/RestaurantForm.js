@@ -31,7 +31,7 @@ class RestaurantForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.authService.login(this.state.name, this.state.password)
+        this.restaurantService.createRestaurant(this.state)
             .then(response => {
                 console.log(response.data)
                 this.props.history.push(`/restaurant/details/${response.data._id}`)
