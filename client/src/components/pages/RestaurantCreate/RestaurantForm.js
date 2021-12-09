@@ -17,7 +17,8 @@ class RestaurantForm extends Component {
                     Type: "Point",
                     Coordinates: []
                 },
-                typeOfKitchen: []
+                typeOfKitchen: [],
+                specialInfo: []
             
         }
 
@@ -93,7 +94,7 @@ class RestaurantForm extends Component {
                                     <Form.Control onChange={this.handleInputChange} value={this.state.imageURL} name="imageURL" type="text" placeholder="Introduce aquí una imagén de tu restaurante" />
                                 </Form.Group>
 
-                                <Form.Select className="mb-3" aria-label="typeOfKitchen">
+                                <Form.Select name="typeOfKitchen" onChange={this.handleInputChange} className="mb-3" aria-label="typeOfKitchen">
                                     <option>Selecciona un tipo de Cocina</option>
                                     <option value="ALEMANA">Alemana</option>
                                     <option value="ANDALUZA">Andaluza</option>
@@ -133,7 +134,7 @@ class RestaurantForm extends Component {
                                     
                                 </Form.Select>
 
-                                <Form.Select className="mb-5" aria-label="specialInfo">
+                                <Form.Select onChange={this.handleInputChange} name="specialInfo" className="mb-5" aria-label="specialInfo">
                                     <option>Selecciona una preferencia </option>
                                     <option value="VEGETARIANO">Vegetariano</option>
                                     <option value="VEGANO">Vegano</option>

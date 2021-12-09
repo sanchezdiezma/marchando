@@ -4,10 +4,17 @@ import './App.css';
 import Navbar from './layaout/Navigation/Navbar';
 import SignupPage from './pages/SignUp/SignUpPage';
 import LoginPage from './pages/Login/LoginPage';
+<<<<<<< HEAD
 import RestaurantForm from './pages/RestaurantCreate/RestaurantForm'
 import RestaurantPage from './pages/RestaurantList/RestaurantPage'
 import { Switch, Route} from 'react-router-dom'
 import Home from '../components/pages/Index/Home'
+=======
+import RestaurantForm from './pages/RestaurantCreate/RestaurantForm';
+import RestaurantPage from './pages/RestaurantList/RestaurantPage';
+import AdminPage from './pages/Admin/AdminPage';
+import { Switch, Route} from 'react-router-dom';
+>>>>>>> a6cf3a436e9bab77d7beb11c67c9c68c16bef91c
 import Step from './shared/Stepper';
 import "./App.css"
  
@@ -40,7 +47,9 @@ class App extends Component{
                 <Route path = "/signup" render={(props) => <SignupPage {...props} storeUser={this.storeUser} />} />
                 <Route path = "/login" render={(props) => <LoginPage {...props} storeUser={this.storeUser} />} />
                 <Route path = "/nuevo-restaurante" render={(props) => <RestaurantForm {...props} storeUser={this.storeUser} />} />
-                <Route path= "/restaurant/details/:id" render={(props) => <RestaurantPage {...props} storeUser={this.storeUser} />}/>
+                <Route path = "/restaurant/details/:id" render={(props) => <RestaurantPage {...props} storeUser={this.storeUser} />}/>
+                <Route path = "/adminpage" render= {(props) => <AdminPage {...props} storeUser = {this.storeUser} />}/>
+              
           </Switch>
 
       </div>

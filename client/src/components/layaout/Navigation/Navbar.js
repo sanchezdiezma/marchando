@@ -30,7 +30,7 @@ const Navigation = ({ loggedUser, storeUser }) => {
            }
             {
               loggedUser.role === 'ADMIN' &&
-            <Nav.Link as={Link} to="/nuevo-restaurante">Página admin</Nav.Link>
+            <Nav.Link as={Link} to="/adminpage">Página admin</Nav.Link>
             }
           </>
             :

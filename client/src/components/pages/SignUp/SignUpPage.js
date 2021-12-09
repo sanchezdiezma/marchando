@@ -33,8 +33,7 @@ class SignupPage extends Component {
 
     handleInputChange = (e) => {
 
-        const { name, value } = e.currentTarget
-        console.log('llamando a handleinputchange', name, value)
+        const { name, value } = e.currentTarge
         this.setState({ [name]: value })
     }
 
