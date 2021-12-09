@@ -60,8 +60,8 @@ class LoginPage extends Component {
                                         </Form.Group>
                             
 
-                                        <Button variant="primary" type="submit">
-                                            Submit
+                                        <Button id='button-custom' type="submit">
+                                            Marchando
                                         </Button>
                                     </Form>
                         </div>
