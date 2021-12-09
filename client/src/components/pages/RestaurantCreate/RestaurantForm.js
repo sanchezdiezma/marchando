@@ -57,25 +57,23 @@ class RestaurantForm extends Component {
                             <hr />
 
                             <Form onSubmit={this.handleSubmit}>
+                            
                                 <Form.Group className="mb-3" controlId="name">
                                     <Form.Label>Nombre del restaurante</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.name} name="name" type="text" placeholder="Nombre del restaurante" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.name} name="name" type="text" placeholder="Introduce aquí el nombre de tu restaurante" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="direction">
                                     <Form.Label>Direccion</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.direction} name="direction" type="direction" placeholder="Direccion" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.direction} name="direction" type="direction" placeholder="Introduce aquí tu direccion" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="description">
                                     <Form.Label>Descripción</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.description} name="description" type="text" placeholder="Descripción" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.description} name="description" type="text" placeholder="Introduce aquí la descripción de tu restaurante" />
                                 </Form.Group>
 
-                                {/* <Form.Group className="mb-3" controlId="priceRange">
-                                    <Form.Label>Rango de precios</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="priceRange" type="text" placeholder="priceRange" />
-                                </Form.Group> */}
+                                
 
                                 
 
@@ -87,17 +85,16 @@ class RestaurantForm extends Component {
 
                                 <Form.Group className="mb-3" controlId="capacity">
                                     <Form.Label>Aforo</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.capacity} name="capacity" type="text" placeholder="Aforo máximo" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.capacity} name="capacity" type="text" placeholder="Introduce aquí el aforo máximo de tu restaurante" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="imageURL">
                                     <Form.Label>Imagen</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.imageURL} name="imageURL" type="text" placeholder="Sube tu logo" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.imageURL} name="imageURL" type="text" placeholder="Introduce aquí una imagén de tu restaurante" />
                                 </Form.Group>
 
                                 <Form.Select className="mb-3" aria-label="typeOfKitchen">
-                                    <Form.Label>Tipo de Cocina</Form.Label>   
-                                    <option>Tipo de Cocina</option>
+                                    <option>Selecciona un tipo de Cocina</option>
                                     <option value="ALEMANA">Alemana</option>
                                     <option value="ANDALUZA">Andaluza</option>
                                     <option value="AMERICANA">Americana</option>
@@ -137,7 +134,7 @@ class RestaurantForm extends Component {
                                 </Form.Select>
 
                                 <Form.Select className="mb-5" aria-label="specialInfo">
-                                    <option>Especialitos</option>
+                                    <option>Selecciona una preferencia </option>
                                     <option value="VEGETARIANO">Vegetariano</option>
                                     <option value="VEGANO">Vegano</option>
                                     <option value="ALERGIAS">Alergias</option>
