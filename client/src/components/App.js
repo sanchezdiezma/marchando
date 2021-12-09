@@ -4,17 +4,11 @@ import './App.css';
 import Navbar from './layaout/Navigation/Navbar';
 import SignupPage from './pages/SignUp/SignUpPage';
 import LoginPage from './pages/Login/LoginPage';
-<<<<<<< HEAD
 import RestaurantForm from './pages/RestaurantCreate/RestaurantForm'
 import RestaurantPage from './pages/RestaurantList/RestaurantPage'
+import AdminPage from './pages/Admin/AdminPage'
 import { Switch, Route} from 'react-router-dom'
 import Home from '../components/pages/Index/Home'
-=======
-import RestaurantForm from './pages/RestaurantCreate/RestaurantForm';
-import RestaurantPage from './pages/RestaurantList/RestaurantPage';
-import AdminPage from './pages/Admin/AdminPage';
-import { Switch, Route} from 'react-router-dom';
->>>>>>> a6cf3a436e9bab77d7beb11c67c9c68c16bef91c
 import Step from './shared/Stepper';
 import "./App.css"
  
