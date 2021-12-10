@@ -16,7 +16,6 @@ class AdminPage extends Component {
   }
 
   updatePendingRestaurants(service) {
-    debugger;
     service
       .getPendingRestaurants()
       .then((response) => {
@@ -34,12 +33,10 @@ class AdminPage extends Component {
       <Container>
         <Row className="justify-content-around">
           {this.state.pendingRestaurants?.map((restaurant) => (
-            <Col md={6} style={{ overflow: "hidden" }}>
               <RestaurantCard
                 updatePendingRestaurants={this.updatePendingRestaurants}
                 restaurant={restaurant}
               ></RestaurantCard>
-            </Col>
           ))}
         </Row>
       </Container>

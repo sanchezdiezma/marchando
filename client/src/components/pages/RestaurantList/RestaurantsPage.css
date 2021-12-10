@@ -1,18 +1,33 @@
 .coaster-card {
   margin-bottom: 40px;
+  
 }
 
 .coaster-card h3 {
   margin-top: 10px;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .coaster-card img {
   height: 200px;
   object-fit: cover;
   width: 100%;
+  align-items: center;
 }
 
 .btn-block {
   width: 100%;
 }
+
+
+.tittle-selector {
+
+  font-weight: bold;
+  text-align: center;
+  color: coral;
+}
+
+.text-selector {
+  text-align: center;
+}
+

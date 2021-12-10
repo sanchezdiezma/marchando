@@ -66,6 +66,8 @@ class RestaurantDetails extends Component {
           <Col md={4}>
             <img src={this.state.imageURL} alt={this.state.name} ></img>
           </Col>
+
+          
         </Row>
       </Container>
     )
