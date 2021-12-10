@@ -9,7 +9,14 @@
     max-width: 100%;
     border-radius: 10px;
     
+    
+    
 }
+
+.img:hover {
+    filter: grayscale(40%);
+}
+
 
 .wrapper {
     height: 100vh;
