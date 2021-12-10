@@ -15,8 +15,12 @@ class AdminPage extends Component {
     this.adminService = new AdminService();
   }
 
-  updatePendingRestaurants(service) {
-    service
+  updatePendingRestaurants = (restaurants) => {
+    this.setState({ pendingRestaurants: restaurants });
+  };
+
+  componentDidMount() {
+    this.adminService
       .getPendingRestaurants()
       .then((response) => {
         this.setState({ pendingRestaurants: response.data });
@@ -29,10 +33,10 @@ class AdminPage extends Component {
       <Container>
         <Row className="justify-content-around">
           {this.state.pendingRestaurants?.map((restaurant) => (
-              <RestaurantCard
-                updatePendingRestaurants={this.updatePendingRestaurants}
-                restaurant={restaurant}
-              ></RestaurantCard>
+            <RestaurantCard
+              updatePendingRestaurants={this.updatePendingRestaurants}
+              restaurant={restaurant}
+            ></RestaurantCard>
           ))}
         </Row>
       </Container>

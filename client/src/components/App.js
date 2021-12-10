@@ -82,12 +82,3 @@ class App extends Component {
 
 export default App;
 
-// {/* // function App() {
-// //   return (
-// //     <div className="App">
-// //       <header className="App-header">
-// //       HOLALALALA
-// //       </header>
-// //     </div>
-// //   );
-// // } */}
