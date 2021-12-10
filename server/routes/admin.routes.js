@@ -10,7 +10,6 @@ router.get("/pendingRestaurants", (req, res) => {
 });
 
 router.put("/editRestaurant/:id", (req, res) => {
-  debugger;
   console.log(req.body);
 
   const { id } = req.params;
