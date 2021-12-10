@@ -22,7 +22,10 @@ class RestaurantCard extends Component {
       .changeRestaurantStatus(this.state.restaurant._id, { status })
       .then((response) => {
         //this.setState({ status: response.data.status });
-        this.props.updatePendingRestaurants(this.adminService);
+        return this.adminService.getPendingRestaurants();
+      })
+      .then((response) => {
+        this.props.updatePendingRestaurants(response.data);
       })
       .catch((err) => console.log(err));
   };

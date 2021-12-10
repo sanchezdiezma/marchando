@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Button, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import AdminService from "../../../services/admin.service";
 import RestaurantCard from "../RestaurantList/RestaurantCard";
 
@@ -15,18 +15,17 @@ class AdminPage extends Component {
     this.adminService = new AdminService();
   }
 
-  updatePendingRestaurants(service) {
-    debugger;
-    service
+  updatePendingRestaurants = (restaurants) => {
+    this.setState({ pendingRestaurants: restaurants });
+  };
+
+  componentDidMount() {
+    this.adminService
       .getPendingRestaurants()
       .then((response) => {
         this.setState({ pendingRestaurants: response.data });
       })
       .catch((err) => console.log(err));
-  }
-
-  componentDidMount() {
-    this.updatePendingRestaurants(this.adminService);
   }
 
   render() {
