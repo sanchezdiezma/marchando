@@ -126,6 +126,20 @@ class RestaurantCard extends Component {
               </div>
 
 
+
+            <div className="text-selector">
+              <p className="subtittle">Información Adicional</p>
+              {this.props.restaurant.specialInfo}
+              <hr></hr>
+            </div>
+
+            <div className="text-selector">
+              <p className="subtittle">Estado</p>
+
+              {this.props.restaurant.status}
+              <hr></hr>
+            </div>
+
             <div className="d-flex justify-content-md-center">
               <Link to={"/"}>
                 <Button id="button-custom" variant="primary">
