@@ -65,7 +65,6 @@ class RestaurantCard extends Component {
                 {this.props.restaurant.capacity}
                 <hr></hr>
               </div>
-<<<<<<< HEAD
                   
 
                 <div className="text-selector">
@@ -108,33 +107,10 @@ class RestaurantCard extends Component {
                 </div>
               
               </Card.Text>
+          </Card.Body>
 
-              <div>
-                <Link to={"/"}>
-                <Button id="button-custom" variant="primary">Reserva</Button>
-                </Link>
-              
-              <Button id="button-custom" onClick={(e) => this.handleClick(e, "ACCEPTED")}>
-                  Aceptar
-              </Button>
-              
-              <Button id="button-custom" onClick={(e) => this.handleClick(e, "REJECTED")}>
-                  Rechazar
-                </Button>
-              
-              </div>
-              
-              
 
-              
-=======
-
-              <div className="text-selector">
-                <p className="subtittle">Tipo de cocina</p>
-                {this.props.restaurant.typeOfKitchen}
-                <hr></hr>
-              </div>
->>>>>>> 9c1f2553daa0a62fda03a43a90582cb2b674bc59
+            
 
               <div className="text-selector">
                 <p className="subtittle">Información Adicional</p>
@@ -148,7 +124,7 @@ class RestaurantCard extends Component {
                 {this.props.restaurant.status}
                 <hr></hr>
               </div>
-            </Card.Text>
+
 
             <div className="d-flex justify-content-md-center">
               <Link to={"/"}>
@@ -171,7 +147,6 @@ class RestaurantCard extends Component {
                 Rechazar
               </Button>
             </div>
-          </Card.Body>
         </Card>
       </Col>
     );
