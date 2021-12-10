@@ -1,0 +1,42 @@
+*  {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    font-family: serif;
+    
+}
+
+.hero {
+    
+    height: 100vh;
+    background-image: url("../../../assets/pexels-larissa-deruzzi-6546181.jpg");
+    background-size: cover;
+    background-position-y: 60%;
+    background-position-x: 10vw;
+    color: coral;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 6em;
+    width: 600px;
+    padding: 100px;
+}
+
+.fl-container {
+    display:flex;
+    flex-wrap:wrap
+}   
+
+
+.fl-justifyh {
+    justify-content: space-between;
+
+}
+
+.fl-centerv {
+    align-items: center;
+}

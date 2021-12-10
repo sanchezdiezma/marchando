@@ -109,11 +109,11 @@ class RestaurantCard extends Component {
                   Rechazar
                 </Button>
               
+              </div>
               
               
 
               
-              </div>
 
           </Card.Body>
         </Card>
