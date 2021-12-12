@@ -104,31 +104,25 @@ class RestaurantCard extends Component {
               </div>
             </Card.Text>
             <hr></hr>
-          <div className="d-flex justify-content-md-center">
-            <Link to={"/"}>
-              <Button id="button-custom" variant="primary">
-                Reserva
-              </Button>
-            </Link>
-
-            <Button
-              id="button-custom"
-              onClick={(e) => this.handleClick(e, "ACCEPTED")}
-            >
-              Aceptar
-            </Button>
-
-            <Button
-              id="button-custom"
-              onClick={(e) => this.handleClick(e, "REJECTED")}
-            >
-              Rechazar
-            </Button>
-          </div>
-        </Card.Body>
-      </Card>
+            {this.state.status === "PENDING" && (
+              <div className="d-flex justify-content-md-center">
+                <Button
+                  id="button-custom"
+                  onClick={(e) => this.handleClick(e, "ACCEPTED")}
+                >
+                  Aceptar
+                </Button>
+                <Button
+                  id="button-custom"
+                  onClick={(e) => this.handleClick(e, "REJECTED")}
+                >
+                  Rechazar
+                </Button>
+              </div>
+            )}
+          </Card.Body>
+        </Card>
       </Col>
-
     );
   }
 }

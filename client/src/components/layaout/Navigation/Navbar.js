@@ -22,12 +22,18 @@ const Navigation = ({ loggedUser, storeUser }) => {
             {" "}
             🔥 Inicio
           </Nav.Link>
-          <Nav.Link as={Link} to="/restaurantes">
-            Restaurantes
-          </Nav.Link>
           {loggedUser ? (
             <>
-              <Nav.Link as={"span"} onClick={logout}>
+              <Nav.Link as={Link} to="/restaurantes">
+                Restaurantes
+              </Nav.Link>
+
+              {loggedUser.role === "USER" && (
+                <Nav.Link as={Link} to="/perfil">
+                  Tus Reservas
+                </Nav.Link>
+              )}
+              <Nav.Link as={Link} to="/" onClick={logout}>
                 Logout
               </Nav.Link>
               {loggedUser.role === "RESTAURANT" && (
@@ -36,9 +42,17 @@ const Navigation = ({ loggedUser, storeUser }) => {
                 </Nav.Link>
               )}
               {loggedUser.role === "ADMIN" && (
-                <Nav.Link as={Link} to="/adminpage">
-                  Página admin
-                </Nav.Link>
+                <>
+                  <Nav.Link as={Link} to="/adminpage">
+                    Página admin
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/acceptedRestaurants">
+                    Restaurantes aprobados
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/rejectedRestaurants">
+                    Restaurantes rechazados
+                  </Nav.Link>
+                </>
               )}
             </>
           ) : (
