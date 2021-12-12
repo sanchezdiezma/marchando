@@ -117,6 +117,7 @@ class RestaurantCard extends Component {
             {this.props.restaurant.status}
             <hr></hr>
           </div>
+
           <div className="d-flex justify-content-md-center">
             <Link to={"/"}>
               <Button id="button-custom" variant="primary">
