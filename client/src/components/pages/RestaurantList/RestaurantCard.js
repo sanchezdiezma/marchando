@@ -125,8 +125,10 @@ class RestaurantCard extends Component {
               Rechazar
             </Button>
           </div>
-        </Card>
+        </Card.Body>
+      </Card>
       </Col>
+
     );
   }
 }
