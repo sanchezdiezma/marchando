@@ -15,7 +15,8 @@ body {
     background-image: url("../../../assets/pexels-larissa-deruzzi-6546181.jpg");
     background-size: cover;
     background-position-y: 60%;
-    background-position-x: 10vw;
+    background-position-x: 0vw;
+    background-repeat: no-repeat;
     color: coral;
 }
 
