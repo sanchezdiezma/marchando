@@ -14,17 +14,24 @@ body {
     height: 100vh;
     background-image: url("../../../assets/pexels-larissa-deruzzi-6546181.jpg");
     background-size: cover;
-    background-position-y: 60%;
-    background-position-x: 0vw;
-    background-repeat: no-repeat;
-    color: coral;
 }
 
-h1 {
-    font-weight: 100;
-    font-size: 6em;
-    width: 600px;
-    padding: 100px;
+.hero h1 {
+    font-weight: 500;
+    font-size: 8em;
+    padding: 35px;
+    letter-spacing: -2px;
+    color: #104d4c;
+}
+    
+    
+  
+
+.hero h2 {
+    font-weight: 400;
+    color: blue;
+    font-size: 4em;
+    
 }
 
 .fl-container {
