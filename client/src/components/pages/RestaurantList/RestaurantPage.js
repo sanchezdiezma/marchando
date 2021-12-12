@@ -4,43 +4,70 @@ import RestaurantService from "../../../services/restaurant.service";
 
 class RestaurantDetails extends Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
-            name: "",
-            direction: "",
-            description: "",
-            priceRange: "",
-            capacity: "",
-            imageURL: "",
-            location: {
-                Type: "Point",
-                Coordinates: []
-            },
-            typeOfKitchen: [],
-            specialInfo:[]
-            
-        }
+      name: "",
+      direction: "",
+      description: "",
+      priceRange: "",
+      capacity: "",
+      imageURL: "",
+      location: {
+        Type: "Point",
+        Coordinates: [],
+      },
+      typeOfKitchen: [],
+      specialInfo: [],
+    };
 
-    this.service = new RestaurantService()
+    this.service = new RestaurantService();
   }
 
   componentDidMount() {
-      
-    const id = this.props.match.params.id
+    const id = this.props.match.params.id;
 
-    this.service.getOneRestaurant(id)
-      .then(response => {
-        const { name, direction, description, priceRange, capacity, imageURL, typeOfKitchen, specialInfo, status} = response.data
-        this.setState({ name, direction, description, priceRange, capacity, imageURL, typeOfKitchen, specialInfo, status })
+    this.service
+      .getOneRestaurant(id)
+      .then((response) => {
+        const {
+          name,
+          direction,
+          description,
+          priceRange,
+          capacity,
+          imageURL,
+          typeOfKitchen,
+          specialInfo,
+          status,
+        } = response.data;
+        this.setState({
+          name,
+          direction,
+          description,
+          priceRange,
+          capacity,
+          imageURL,
+          typeOfKitchen,
+          specialInfo,
+          status,
+        });
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }
 
   render() {
-
-    const{ name, direction, description, priceRange, capacity, imageURL, typeOfKitchen, specialInfo, status } = this.state
-    
+    const {
+      name,
+      direction,
+      description,
+      priceRange,
+      capacity,
+      imageURL,
+      typeOfKitchen,
+      specialInfo,
+      status,
+    } = this.state;
 
     return (
       <Container>
@@ -64,14 +91,12 @@ class RestaurantDetails extends Component {
             </article>
           </Col>
           <Col md={4}>
-            <img src={this.state.imageURL} alt={this.state.name} ></img>
+            <img src={imageURL} alt={name}></img>
           </Col>
-
-          
         </Row>
       </Container>
-    )
+    );
   }
 }
 
-export default RestaurantDetails
+export default RestaurantDetails;

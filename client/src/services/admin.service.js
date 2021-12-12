@@ -9,6 +9,8 @@ class AdminService {
   }
 
   getPendingRestaurants = () => this.app.get("/pendingRestaurants");
+  getAcceptedRestaurants = () => this.app.get("/acceptedRestaurants");
+  getRejectedRestaurants = () => this.app.get("/rejectedRestaurants");
   getOneRestaurant = (id) => this.app.get(`/${id}`);
   createRestaurant = (restaurantData) =>
     this.app.post("/newRestaurant", restaurantData);

@@ -1,34 +1,32 @@
 import React, { Component } from "react";
-import GoogleMapReact from "google-map-react";
+import { Map, GoogleApiWrapper } from "google-maps-react";
+import ApprovedRestaurants from "../components/pages/Admin/ApprovedRestaurants";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const mapStyles = {
+  width: "40%",
+  height: "40%",
+};
 
-class SimpleMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 40.39188333,
-      lng: -3.6985,
-    },
-    zoom: 12,
-  };
-
+export class MapContainer extends Component {
   render() {
     return (
-      <div style={{ height: "400px", width: "400px" }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyB2S44K34qk8CkQtWSYkFycgcJHegFLzrk" }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <AnyReactComponent
-            lat={40.39188333}
-            lng={-3.6985}
-            icon="http://maps.google.com/mapfiles/kml/paddle/blu-stars.png"
+      <>
+        <div>
+          <Map
+            google={this.props.google}
+            zoom={14}
+            style={mapStyles}
+            initialCenter={{
+              lat: 40.39188333,
+              lng: -3.6985,
+            }}
           />
-        </GoogleMapReact>
-      </div>
+        </div>
+      </>
     );
   }
 }
 
-export default SimpleMap;
+export default GoogleApiWrapper({
+  apiKey: "AIzaSyB2S44K34qk8CkQtWSYkFycgcJHegFLzrk",
+})(MapContainer);

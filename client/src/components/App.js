@@ -1,17 +1,18 @@
 import { Component } from "react";
-import AuthService from "../services/auth.service";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
+import AuthService from "../services/auth.service";
 import Navbar from "./layaout/Navigation/Navbar";
 import SignupPage from "./pages/SignUp/SignUpPage";
 import LoginPage from "./pages/Login/LoginPage";
 import RestaurantForm from "./pages/RestaurantCreate/RestaurantForm";
 import RestaurantPage from "./pages/RestaurantList/RestaurantPage";
 import AdminPage from "./pages/Admin/AdminPage";
-import { Switch, Route } from "react-router-dom";
 import Home from "../components/pages/Index/Home";
 import Mapsview from "../components/pages/MapsPages/Mapsview";
-import Step from "./shared/Stepper";
-import "./App.css";
+import ApprovedRestaurants from "./pages/Admin/ApprovedRestaurants";
+import RejectedRestaurants from "./pages/Admin/RejectedRestaurants";
+import UserProfile from "./pages/User/UserProfile";
 
 class App extends Component {
   constructor(pros) {
@@ -51,6 +52,12 @@ class App extends Component {
             )}
           />
           <Route
+            path="/perfil"
+            render={(props) => (
+              <UserProfile {...props} storeUser={this.storeUser} />
+            )}
+          />
+          <Route
             path="/nuevo-restaurante"
             render={(props) => (
               <RestaurantForm {...props} storeUser={this.storeUser} />
@@ -69,6 +76,18 @@ class App extends Component {
             )}
           />
           <Route
+            path="/acceptedRestaurants"
+            render={(props) => (
+              <ApprovedRestaurants {...props} storeUser={this.storeUser} />
+            )}
+          />
+          <Route
+            path="/rejectedRestaurants"
+            render={(props) => (
+              <RejectedRestaurants {...props} storeUser={this.storeUser} />
+            )}
+          />
+          <Route
             path="/restaurantes"
             render={(props) => (
               <Mapsview {...props} storeUser={this.storeUser} />
@@ -81,4 +100,3 @@ class App extends Component {
 }
 
 export default App;
-

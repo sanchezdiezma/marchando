@@ -9,6 +9,22 @@ router.get("/pendingRestaurants", (req, res) => {
     );
 });
 
+router.get("/acceptedRestaurants", (req, res) => {
+  Restaurant.find({ status: "ACCEPTED" })
+    .then((allRestaurants) => res.json(allRestaurants))
+    .catch((err) =>
+      res.json({ err, errMessage: "Problema buscando Restaurantes" })
+    );
+});
+
+router.get("/rejectedRestaurants", (req, res) => {
+  Restaurant.find({ status: "REJECTED" })
+    .then((allRestaurants) => res.json(allRestaurants))
+    .catch((err) =>
+      res.json({ err, errMessage: "Problema buscando Restaurantes" })
+    );
+});
+
 router.put("/editRestaurant/:id", (req, res) => {
   console.log(req.body);
 
