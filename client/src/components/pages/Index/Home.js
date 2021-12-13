@@ -1,12 +1,16 @@
 import "../Index/Home.css";
 import ImgSection1 from '../../../assets/2-5-pie.png'
+import Icon1 from '../../../assets/ico1.png'
+import Icon2 from '../../../assets/ico2.png'
+import Icon3 from '../../../assets/ico3.png'
+import Icon4 from '../../../assets/ico4.png'
 
 
 function Home() {
     return (
         <div>
             
-            <section className="hero">
+            <section className="hero1">
                 <div>
                     <h1>Marchando</h1>
                     <p>¡Si no tienes reserva, por lo menos ten Marchando!</p>
@@ -15,36 +19,101 @@ function Home() {
 
             <section className="hero3 fl-container fl-centerh fl-centerv">
             
-                <div class="section-img">
-                    <img className="imgHero3" src={ImgSection1} alt="ImgSection1" />
-                </div>
+            </section>
+               
+
+            <section className="hero4">
+
+            <div className="grafico">
+
+                    <div class="section-img">
+                        <img className="imgHero3" src={ImgSection1} alt="ImgSection1" />
+                    </div>
+
+                    <div className="text">
+                        <p>Reduce cancelaciones de último minuto mostrando disponibilidad en tiempo real. <br />
+                         gestionando tus reservas de manera más efectiva.</p>
+                    </div>
+
+
+            </div>
+
                 
-                <div className="text"> 
-                    <p>Cuatro de cada diez reservas<br/>
-                    se acaban cancelando, produciendo<br/>
-                    grandes perdidas a los restaurantes</p>
-                  
-                    
-                </div>
+                        <div className="icogroup">
+
+                        <div className="ico-container">
+
+                        <img className="ico" src={Icon1} alt="Icon1"/>
+                        <div className="text-container">
+
+                            <p>Llega a un mayor número de clientes potenciales.</p>
+                       </div> 
+                        </div>
+                        
+
+                        <div className="ico-container">
+                        
+                        <img className="ico" src={Icon2} alt="Icon2"/>
+                        
+                        <div className="text-container">
+                            <p>Cubre cancelaciones de último minuto.</p>
+                        </div>
+
+                        </div>
+
+                        
+
+                        <div className="ico-container">
+
+                        <img className="ico" src={Icon3} alt="Icon3"/>
+
+                        <div className="text-container">
+                            <p>Acceso a las opiniones de los usuarios de Marchando.</p>
+                        </div>
+
+                        </div>
+
+
+
+                        <div className="ico-container">
+                        <img className="ico" src={Icon4} alt="Icon4" />
+
+                        <div className="text-container">
+                            <p>No requiere integración adicional.</p>
+                        </div>
+                        </div>
+
+
+             </div>
+
+
+                       
+
+                        
+                       
+                       
+
+                   
+
+
+
+               
 
             </section>
 
             
+            <section className="heroFooter">
+
+            <p className="textFooter"> Desarrollado en Ironhack con ❤️ por Alex Alcaide & JM Sánchez Diezma</p>
+
+            </section>
 
                     
                 
             
            
 
-            <section className="hero4">
 
-            </section>
-
-            <section className="heroFooter">
-
-            <p className="textFooter"> Desarrollado en Ironhack con ❤️ por Alex Alcaide & JM Sánchez Diezma</p>
-
-            </section>
             
 
 
