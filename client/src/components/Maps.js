@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import ApprovedRestaurants from "../components/pages/Admin/ApprovedRestaurants";
 import "./Maps.css";
-const mapStyles = {
-  width: "40%",
-  height: "40%",
-};
 
 export class MapContainer extends Component {
   render() {
@@ -14,13 +10,28 @@ export class MapContainer extends Component {
         <div id="mapBox">
           <Map
             google={this.props.google}
+            style={{ width: "100%", height: "100%", position: "relative" }}
+            className={"map"}
             zoom={14}
-            style={mapStyles}
-            initialCenter={{
-              lat: 40.39188333,
-              lng: -3.6985,
-            }}
-          />
+          >
+            <Marker
+              title={"The marker`s title will appear as a tooltip."}
+              name={"SOMA"}
+              position={{ lat: 37.778519, lng: -122.40564 }}
+            />
+            <Marker
+              name={"Dolores park"}
+              position={{ lat: 37.759703, lng: -122.428093 }}
+            />
+            <Marker />
+            <Marker
+              name={"Your position"}
+              position={{ lat: 37.762391, lng: -122.439192 }}
+              icon={{
+                url: "/path/to/custom_icon.png",
+              }}
+            />
+          </Map>
         </div>
         <div>
           <ApprovedRestaurants />

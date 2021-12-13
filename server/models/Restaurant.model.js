@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const Restaurant = new Schema({
   name: String,
+  ownerId: { type: mongoose.SchemaTypes.ObjectId, ref: "User" },
   direction: String,
   description: String,
   priceRange: String,

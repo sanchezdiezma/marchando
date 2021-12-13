@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import { Card, Button, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "./RestaurantsPage.css";
-import UserService from "../../../services/user.service";
+import { Col, Modal, Button, Card } from "react-bootstrap";
+import ReservationForm from "./ReservationForm";
+import UserService from "../../../services/reservation.service";
 
-class ReservationForm extends Component {
+class ReservationCard extends Component {
   constructor(props) {
     super();
 
     this.state = {
-      persons: "0",
+      persons: "",
       date: "",
     };
 
@@ -20,12 +19,22 @@ class ReservationForm extends Component {
     this.userService
       .newReservation(this.state)
       .then((response) => {
-        return this.userService.getPendingRestaurants();
+        return response;
       })
-      .then((response) => {
-        this.props.updatePendingRestaurants(response.data);
-      })
+      .then(() => {})
       .catch((err) => console.log(err));
+  };
+
+  openModal = () => {
+    this.setState({
+      showModal: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      showModal: false,
+    });
   };
 
   render() {
@@ -71,17 +80,35 @@ class ReservationForm extends Component {
             </Card.Text>
             <hr></hr>
             <div className="d-flex justify-content-md-center">
-              <Link to={"/"}>
-                <Button id="button-custom" variant="primary">
-                  Reserva
-                </Button>
-              </Link>
+              <Button
+                onClick={this.openModal}
+                id="button-custom"
+                variant="primary"
+              >
+                Reserva
+              </Button>
             </div>
           </Card.Body>
         </Card>
+
+        <Modal
+          show={this.state.showModal}
+          backdrop="static"
+          onHide={this.closeModal}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Nueva Reserva</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ReservationForm
+              closeModal={this.closeModal}
+              restaurant={this.props.restaurant}
+            />
+          </Modal.Body>
+        </Modal>
       </Col>
     );
   }
 }
 
-export default ReservationForm;
+export default ReservationCard;
