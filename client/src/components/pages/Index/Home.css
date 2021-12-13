@@ -9,30 +9,35 @@ body {
     
 }
 
+.navbar {
+    background: none !important;
+    -webkit-backdrop-filter: blur(60px) #ffffff00 !important;
+}
+
 .hero {
+
     height: 100vh;
     background-image: url("../../../assets/poke.jpg");
     background-size: cover;
-    background-position-y: 60%;
-    background-position-x: 0vw;
-    background-repeat: no-repeat;
-    padding: 35px;
+    align-items: center;
+    display:flex;
+    padding: 40px;
     color: #104d4c;
 }
 
 .hero h1 {
-    font-weight: 600;
+    font-weight: 800;
     font-size: 10em;
-    letter-spacing: -5px;
-    margin: 20px;
+    letter-spacing: -4px;
+    margin-bottom: 0;
+    line-height: 0.9;
 }
     
 .hero p {
-    font-weight: normal;
+    font-weight: 800;
     font-size: 2em;
-    margin: -25px;
-    display: flex;
-    justify-content: center;
+    letter-spacing: 1px;
+    
 }
 
 .hero2 {
@@ -48,6 +53,7 @@ body {
     margin: -25px;
     display: flex;
     justify-content: center;
+    gap: 20%;
     color: #024959;
 }
 
@@ -56,13 +62,16 @@ body {
      height: 100vh;
      background-size: cover;
      background-repeat: no-repeat;
+     gap: 10rem;
+     align-items: center;
+    
 }
 
 .hero3 .imgHero3 {
 
     margin: 20px;
    padding: 20px;
-    width: 110%;
+    width: 100%;
 
 }
 
@@ -74,23 +83,32 @@ body {
 }
 
 .heroFooter {
-
     background-color: #000000;
-     height: 13vh;
-     background-size: cover;
-     background-repeat: no-repeat;
-   
+     height: 5vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: azure;   
 
 }
+
+
+
 
 .text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 120px;
 }
-        
-  
 
+.text p {
+    color: #ff8153;
+    font-size: 3em;
+    font-weight: 600;
+    letter-spacing: -2px;
+   
+}
 
 
 .fl-container {
@@ -104,6 +122,9 @@ body {
 
 }
 
-.fl-centerv {
-    align-items: center;
-}
+
+        
+  
+
+
+

@@ -3,6 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AuthService from "../../../services/auth.service";
 
+
 const authService = new AuthService();
 
 const Navigation = ({ loggedUser, storeUser }) => {
@@ -14,7 +15,7 @@ const Navigation = ({ loggedUser, storeUser }) => {
   };
 
   return (
-    <Navbar expand="lg" variant="light" bg="light">
+    <Navbar className="navbar" expand="lg">
       <Container>
         <Navbar.Brand href="/"></Navbar.Brand>
         <Nav className="me-auto">

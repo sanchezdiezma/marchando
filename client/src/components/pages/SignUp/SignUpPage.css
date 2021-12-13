@@ -14,7 +14,7 @@
 }
 
 .img:hover {
-    /* filter: grayscale(40%); */
+    
     padding-right: 40px;
     transition: 1s;
 }
@@ -26,7 +26,7 @@
 
 h2 {
     text-align: center;
-    color: coral;
+    color: #f1c1b6;
     
     
 }
@@ -40,7 +40,7 @@ h2 {
 
 
 .main-form-container {
-    outline: solid 1px #ff8153;
+    outline: solid 2px #f1c1b6; 
     border-radius: 10px;
     padding: 40px;
     height: 410px;
@@ -49,7 +49,7 @@ h2 {
 
 .main-form-container h2 {
 
-    color: coral;
+    color: #f1c1b6;
     font-size: 1.5em;
     white-space: pre;
     margin-bottom:20px ;
@@ -60,7 +60,3 @@ h2 {
 }
 
 
-/* element.style {
-    height: 50vh; 
-
-    object-fit: COVER; */
