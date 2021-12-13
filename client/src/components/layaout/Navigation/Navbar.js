@@ -38,9 +38,14 @@ const Navigation = ({ loggedUser, storeUser }) => {
                 Logout
               </Nav.Link>
               {loggedUser.role === "RESTAURANT" && (
-                <Nav.Link as={Link} to="/nuevo-restaurante">
-                  Crear Restaurante
-                </Nav.Link>
+                <>
+                  <Nav.Link as={Link} to="/nuevo-restaurante">
+                    Crear Restaurante
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="restaurantProfile">
+                    Crear Reserva
+                  </Nav.Link>
+                </>
               )}
               {loggedUser.role === "ADMIN" && (
                 <>

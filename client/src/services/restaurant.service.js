@@ -1,16 +1,18 @@
-import axios from 'axios'
+import axios from "axios";
 
 class RestaurantService {
   constructor() {
     this.app = axios.create({
-      baseURL: 'http://localhost:5005/restaurantes',
-      withCredentials: true
-    })
+      baseURL: "http://localhost:5005/restaurantes",
+      withCredentials: true,
+    });
   }
 
-  getAllRestaurants = () => this.app.get("/allRestaurants")
-  getOneRestaurant = (id) => this.app.get(`/${id}`)
-  createRestaurant = (restaurantData) => this.app.post("/newRestaurant", restaurantData)
+  getAllRestaurants = () => this.app.get("/allRestaurants");
+  getOneRestaurant = (id) => this.app.get(`/${id}`);
+  createRestaurant = (restaurantData) =>
+    this.app.post("/newRestaurant", restaurantData);
+  getUserRestaurants = () => this.app.get("/findUserRestaurants");
 }
 
-export default RestaurantService
+export default RestaurantService;

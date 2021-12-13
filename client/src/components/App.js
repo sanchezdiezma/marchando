@@ -13,6 +13,7 @@ import Mapsview from "../components/pages/MapsPages/Mapsview";
 import ApprovedRestaurants from "./pages/Admin/ApprovedRestaurants";
 import RejectedRestaurants from "./pages/Admin/RejectedRestaurants";
 import UserProfile from "./pages/User/UserProfile";
+import ReservationList from "./pages/Reservations/ReservationList";
 
 class App extends Component {
   constructor(pros) {
@@ -91,6 +92,18 @@ class App extends Component {
             path="/restaurantes"
             render={(props) => (
               <Mapsview {...props} storeUser={this.storeUser} />
+            )}
+          />
+          <Route
+            path="/userProfile"
+            render={(props) => (
+              <UserProfile {...props} storeUser={this.storeUser} />
+            )}
+          />
+          <Route
+            path="/restaurantProfile"
+            render={(props) => (
+              <ReservationList {...props} storeUser={this.storeUser} />
             )}
           />
         </Switch>

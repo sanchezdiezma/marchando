@@ -1,39 +1,46 @@
 import React, { Component } from "react";
-import { Card, Button, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "./RestaurantsPage.css";
-import UserService from "../../../services/user.service";
+import { Col, Modal, Button, Card } from "react-bootstrap";
+import ReservationForm from "./ReservationForm";
+import UserService from "../../../services/reservation.service";
 
 class ReservationCard extends Component {
   constructor(props) {
     super();
 
     this.state = {
-      restaurant: props.restaurant,
-      status: props.restaurant.status,
+      persons: "",
+      date: "",
     };
 
     this.userService = new UserService();
   }
 
-  handleClick = (e, status) => {
-    console.log(this.state.restaurant._id);
-    this.adminService
-      .changeRestaurantStatus(this.state.restaurant._id, { status })
+  handleClick = (e) => {
+    this.userService
+      .newReservation(this.state)
       .then((response) => {
-        //this.setState({ status: response.data.status });
-        return this.adminService.getPendingRestaurants();
+        return response;
       })
-      .then((response) => {
-        this.props.updatePendingRestaurants(response.data);
-      })
+      .then(() => {})
       .catch((err) => console.log(err));
+  };
+
+  openModal = () => {
+    this.setState({
+      showModal: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      showModal: false,
+    });
   };
 
   render() {
     return (
       <Col md={4} style={{ overflow: "hidden" }}>
-        <Card className="coaster-card">
+        <Card>
           <Card.Img variant="top" src={this.props.restaurant.imageURL} />
           <Card.Body>
             <div className="tittle-selector">
@@ -70,23 +77,35 @@ class ReservationCard extends Component {
                 {this.props.restaurant.typeOfKitchen}
                 <hr></hr>
               </div>
-
-              <div className="text-selector">
-                <p className="subtittle">Información Adicional</p>
-                {this.props.restaurant.specialInfo}
-                <hr></hr>
-              </div>
             </Card.Text>
             <hr></hr>
             <div className="d-flex justify-content-md-center">
-              <Link to={"/"}>
-                <Button id="button-custom" variant="primary">
-                  Reserva
-                </Button>
-              </Link>
+              <Button
+                onClick={this.openModal}
+                id="button-custom"
+                variant="primary"
+              >
+                Reserva
+              </Button>
             </div>
           </Card.Body>
         </Card>
+
+        <Modal
+          show={this.state.showModal}
+          backdrop="static"
+          onHide={this.closeModal}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Nueva Reserva</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ReservationForm
+              closeModal={this.closeModal}
+              restaurant={this.props.restaurant}
+            />
+          </Modal.Body>
+        </Modal>
       </Col>
     );
   }

@@ -9,16 +9,6 @@ router.get("/allRestaurants", (req, res) => {
     );
 });
 
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
-
-  Restaurant.findById(id)
-    .then((theRestaurant) => res.json(theRestaurant))
-    .catch((err) =>
-      res.json({ err, errMessage: "Problema buscando un Restaurante" })
-    );
-});
-
 router.post("/newRestaurant", (req, res) => {
   const {
     name,
@@ -34,6 +24,7 @@ router.post("/newRestaurant", (req, res) => {
 
   Restaurant.create({
     name,
+    ownerId: req.session.currentUser._id,
     direction,
     description,
     priceRange,
@@ -93,6 +84,26 @@ router.delete("/deleteRestaurant/:id", (req, res) => {
     .then((deletedRestaurant) => res.json({ deletedRestaurant }))
     .catch((err) =>
       res.json({ err, errMessage: "Problema borrando Restaurante" })
+    );
+});
+
+router.get("/findUserRestaurants", (req, res) => {
+  console.log("el usuario logeado es:", req.session.currentUser._id);
+
+  Restaurant.find({ ownerId: req.session.currentUser._id })
+    .then((response) => res.json(response))
+    .catch((err) =>
+      res.json({ err, errMessage: "Problema obteniendo tu Restaurante" })
+    );
+});
+
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+
+  Restaurant.findById(id)
+    .then((theRestaurant) => res.json(theRestaurant))
+    .catch((err) =>
+      res.json({ err, errMessage: "Problema buscando un Restaurante" })
     );
 });
 
