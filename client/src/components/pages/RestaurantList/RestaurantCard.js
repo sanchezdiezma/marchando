@@ -11,13 +11,13 @@ class RestaurantCard extends Component {
     this.state = {
       restaurant: props.restaurant,
       status: props.restaurant.status,
+      //role: props.user.role,
     };
 
     this.adminService = new AdminService();
   }
 
   handleClick = (e, status) => {
-    console.log(this.state.restaurant._id);
     this.adminService
       .changeRestaurantStatus(this.state.restaurant._id, { status })
       .then((response) => {
@@ -100,7 +100,6 @@ class RestaurantCard extends Component {
                 <p className="subtittle">Estado</p>
 
                 {this.props.restaurant.status}
-                <hr></hr>
               </div>
             </Card.Text>
             <hr></hr>
@@ -118,6 +117,15 @@ class RestaurantCard extends Component {
                 >
                   Rechazar
                 </Button>
+              </div>
+            )}
+            {this.state.role === "USER" && (
+              <div className="d-flex justify-content-md-center">
+                <Link to={"/userProfile"}>
+                  <Button id="button-custom" variant="primary">
+                    Reserva
+                  </Button>
+                </Link>
               </div>
             )}
           </Card.Body>

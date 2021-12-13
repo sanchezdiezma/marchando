@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper } from "google-maps-react";
 import ApprovedRestaurants from "../components/pages/Admin/ApprovedRestaurants";
-
+import "./Maps.css";
 const mapStyles = {
   width: "40%",
   height: "40%",
@@ -11,7 +11,7 @@ export class MapContainer extends Component {
   render() {
     return (
       <>
-        <div>
+        <div id="mapBox">
           <Map
             google={this.props.google}
             zoom={14}
@@ -21,6 +21,9 @@ export class MapContainer extends Component {
               lng: -3.6985,
             }}
           />
+        </div>
+        <div>
+          <ApprovedRestaurants />
         </div>
       </>
     );

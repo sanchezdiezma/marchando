@@ -4,25 +4,23 @@ import { Link } from "react-router-dom";
 import "./RestaurantsPage.css";
 import UserService from "../../../services/user.service";
 
-class ReservationCard extends Component {
+class ReservationForm extends Component {
   constructor(props) {
     super();
 
     this.state = {
-      restaurant: props.restaurant,
-      status: props.restaurant.status,
+      persons: "0",
+      date: "",
     };
 
     this.userService = new UserService();
   }
 
-  handleClick = (e, status) => {
-    console.log(this.state.restaurant._id);
-    this.adminService
-      .changeRestaurantStatus(this.state.restaurant._id, { status })
+  handleClick = (e) => {
+    this.userService
+      .newReservation(this.state)
       .then((response) => {
-        //this.setState({ status: response.data.status });
-        return this.adminService.getPendingRestaurants();
+        return this.userService.getPendingRestaurants();
       })
       .then((response) => {
         this.props.updatePendingRestaurants(response.data);
@@ -33,7 +31,7 @@ class ReservationCard extends Component {
   render() {
     return (
       <Col md={4} style={{ overflow: "hidden" }}>
-        <Card className="coaster-card">
+        <Card>
           <Card.Img variant="top" src={this.props.restaurant.imageURL} />
           <Card.Body>
             <div className="tittle-selector">
@@ -70,12 +68,6 @@ class ReservationCard extends Component {
                 {this.props.restaurant.typeOfKitchen}
                 <hr></hr>
               </div>
-
-              <div className="text-selector">
-                <p className="subtittle">Información Adicional</p>
-                {this.props.restaurant.specialInfo}
-                <hr></hr>
-              </div>
             </Card.Text>
             <hr></hr>
             <div className="d-flex justify-content-md-center">
@@ -92,4 +84,4 @@ class ReservationCard extends Component {
   }
 }
 
-export default ReservationCard;
+export default ReservationForm;

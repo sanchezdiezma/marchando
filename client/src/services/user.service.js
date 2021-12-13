@@ -7,6 +7,9 @@ class UserService {
       withCredentials: true,
     });
   }
+
+  newReservation = (restaurantId, data) =>
+    this.app.post(`/${restaurantId}`, data);
 }
 
 export default UserService;
