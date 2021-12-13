@@ -6,22 +6,25 @@ function Home() {
     return (
         <div>
             
-            <section className="hero fl-container fl-centerh fl-centerv">
+            <section className="hero">
                 <div>
                     <h1>Marchando</h1>
-                    <p>¿Sin reserva para esta noche?</p>
+                    <p>¡Si no tienes reserva, por lo menos ten Marchando!</p>
                 </div>
             </section>
 
             <section className="hero3 fl-container fl-centerh fl-centerv">
-                <div>
+            
+                <div class="section-img">
                     <img className="imgHero3" src={ImgSection1} alt="ImgSection1" />
                 </div>
                 
                 <div className="text"> 
-                    <p>¿Sin reserva para esta noche?</p>
-                    <p>¿Sin reserva para esta noche?</p>
-                    <p>¿Sin reserva para esta noche?</p>
+                    <p>Cuatro de cada diez reservas<br/>
+                    se acaban cancelando, produciendo<br/>
+                    grandes perdidas a los restaurantes</p>
+                  
+                    
                 </div>
 
             </section>
@@ -38,6 +41,8 @@ function Home() {
             </section>
 
             <section className="heroFooter">
+
+            <p className="textFooter"> Desarrollado en Ironhack con ❤️ por Alex Alcaide & JM Sánchez Diezma</p>
 
             </section>
             
