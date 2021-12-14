@@ -18,8 +18,9 @@ import ReservationList from "./pages/Reservations/ReservationList";
 class App extends Component {
   constructor(pros) {
     super(pros);
-
-    this.state = { loggedUser: undefined };
+    this.state = {
+      loggedUser: undefined,
+    };
     this.authService = new AuthService();
   }
 
@@ -72,27 +73,23 @@ class App extends Component {
           />
           <Route
             path="/adminpage"
-            render={(props) => (
-              <AdminPage {...props} storeUser={this.storeUser} />
-            )}
+            render={(props) => <AdminPage loggedUser={this.state.loggedUser} />}
           />
           <Route
             path="/acceptedRestaurants"
             render={(props) => (
-              <ApprovedRestaurants {...props} storeUser={this.storeUser} />
+              <ApprovedRestaurants loggedUser={this.state.loggedUser} />
             )}
           />
           <Route
             path="/rejectedRestaurants"
             render={(props) => (
-              <RejectedRestaurants {...props} storeUser={this.storeUser} />
+              <RejectedRestaurants loggedUser={this.state.loggedUser} />
             )}
           />
           <Route
             path="/restaurantes"
-            render={(props) => (
-              <Mapsview {...props} storeUser={this.storeUser} />
-            )}
+            render={(props) => <Mapsview loggedUser={this.state.loggedUser} />}
           />
           <Route
             path="/userProfile"

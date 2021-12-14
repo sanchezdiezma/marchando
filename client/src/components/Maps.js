@@ -4,6 +4,14 @@ import ApprovedRestaurants from "../components/pages/Admin/ApprovedRestaurants";
 import "./Maps.css";
 
 export class MapContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loggedUser: this.props.loggedUser,
+    };
+  }
+
   render() {
     return (
       <>
@@ -34,7 +42,7 @@ export class MapContainer extends Component {
           </Map>
         </div>
         <div>
-          <ApprovedRestaurants />
+          <ApprovedRestaurants loggedUser={this.props.loggedUser} />
         </div>
       </>
     );

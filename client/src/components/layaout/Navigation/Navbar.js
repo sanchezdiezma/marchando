@@ -3,7 +3,6 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AuthService from "../../../services/auth.service";
 
-
 const authService = new AuthService();
 
 const Navigation = ({ loggedUser, storeUser }) => {

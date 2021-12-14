@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Button } from "react-bootstrap";
 import AdminService from "../../../services/admin.service";
 import RestaurantCard from "../RestaurantList/RestaurantCard";
 
 class RejectedRestaurants extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       rejectedRestaurants: [],
@@ -36,6 +36,7 @@ class RejectedRestaurants extends Component {
             <RestaurantCard
               updateRejectedRestaurants={this.updateRejectedRestaurants}
               restaurant={restaurant}
+              loggedUser={this.props.loggedUser}
             ></RestaurantCard>
           ))}
         </Row>

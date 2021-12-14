@@ -85,7 +85,7 @@ class ReservationCard extends Component {
                 id="button-custom"
                 variant="primary"
               >
-                Reserva
+                Crea una Oferta
               </Button>
             </div>
           </Card.Body>

@@ -8,6 +8,7 @@ class AdminService {
     });
   }
 
+  deleteOneRestaurant = (id) => this.app.delete(`/deleteRestaurant/${id}`);
   getPendingRestaurants = () => this.app.get("/pendingRestaurants");
   getAcceptedRestaurants = () => this.app.get("/acceptedRestaurants");
   getRejectedRestaurants = () => this.app.get("/rejectedRestaurants");

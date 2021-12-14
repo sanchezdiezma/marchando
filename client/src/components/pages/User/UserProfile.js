@@ -6,10 +6,7 @@ class UserProfile extends Component {
   constructor() {
     super();
 
-    this.state = {
-      approvedRestaurants: [],
-      status: "ACCEPTED",
-    };
+    this.state = {};
 
     this.authService = new AuthService();
   }
