@@ -31,8 +31,8 @@ function Home() {
                     </div>
 
                     <div className="text">
-                        <p>Reduce cancelaciones de último minuto mostrando disponibilidad en tiempo real. <br />
-                         gestionando tus reservas de manera más efectiva.</p>
+                        <p>No pierdas parte del pastel de tu negocio gestionando de manera eficiente las cancelaciones de último minuto
+                         </p>
                     </div>
 
 
