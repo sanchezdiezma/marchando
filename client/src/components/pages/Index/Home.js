@@ -15,8 +15,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="hero3 fl-container fl-centerh fl-centerv"></section>
-
       <section className="hero4">
         <div className="grafico">
           <div class="section-img">
@@ -64,6 +62,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section className="hero3 fl-container fl-centerh fl-centerv"></section>
 
       <section className="heroFooter">
         <p className="textFooter">
