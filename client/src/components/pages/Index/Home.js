@@ -17,9 +17,7 @@ function Home() {
                 </div>
             </section>
 
-            <section className="hero3 fl-container fl-centerh fl-centerv">
-            
-            </section>
+           
                
 
             <section className="hero4">
@@ -85,19 +83,10 @@ function Home() {
 
 
              </div>
+            
+            </section>
 
-
-                       
-
-                        
-                       
-                       
-
-                   
-
-
-
-               
+            <section className="hero3 fl-container fl-centerh fl-centerv">
 
             </section>
 

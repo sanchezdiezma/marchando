@@ -3,6 +3,7 @@ import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import ApprovedRestaurants from "../components/pages/Admin/ApprovedRestaurants";
 import "./Maps.css";
 
+
 export class MapContainer extends Component {
   render() {
     return (
@@ -12,21 +13,31 @@ export class MapContainer extends Component {
             google={this.props.google}
             style={{ width: "100%", height: "100%", position: "relative" }}
             className={"map"}
-            zoom={14}
+            initialCenter={{
+              lat: 40.41716324692655,
+              lng: -3.703504849618043
+            }}
+            zoom={12}
+
+            
+            
           >
             <Marker
-              title={"The marker`s title will appear as a tooltip."}
+              title={"Edelweis"}
               name={"SOMA"}
-              position={{ lat: 37.778519, lng: -122.40564 }}
+              position={{ lat: 40.417056915653724, lng: -3.6965467813120205 }}
             />
+            
             <Marker
-              name={"Dolores park"}
-              position={{ lat: 37.759703, lng: -122.428093 }}
+              title={"Macarena"}
+              position={{ lat: 40.390801905530054, lng:-3.6913688386975587  }}
             />
-            <Marker />
+
+            
             <Marker
-              name={"Your position"}
-              position={{ lat: 37.762391, lng: -122.439192 }}
+              title={"Burnout"}
+              position={{ lat: 40.421191866999344, lng: -3.702063084701775  }}
+           
               icon={{
                 url: "/path/to/custom_icon.png",
               }}
@@ -44,3 +55,41 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: "AIzaSyB2S44K34qk8CkQtWSYkFycgcJHegFLzrk",
 })(MapContainer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

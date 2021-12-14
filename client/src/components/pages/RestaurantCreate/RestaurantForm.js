@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import RestaurantService from "../../../services/restaurant.service";
 
+
 class RestaurantForm extends Component {
   constructor(props) {
     super(props);

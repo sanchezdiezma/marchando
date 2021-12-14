@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "google-maps-react": "^2.0.6",
-    "nodemailer": "^6.7.2"
+    "nodemailer": "^6.7.2",
+    "react-geocode": "^0.2.3",
+    "react-google-maps": "^9.4.5"
   }
 }

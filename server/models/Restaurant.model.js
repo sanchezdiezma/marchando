@@ -61,6 +61,7 @@ const Restaurant = new Schema({
     type: [String],
     enum: ["VEGETARIANO", "VEGANO", "ALERGIAS", "CELIACOS"],
   },
+
   location: [
     {
       type: {
@@ -69,6 +70,7 @@ const Restaurant = new Schema({
       coordinates: [Number],
     },
   ],
+  
   status: {
     type: String,
     enum: ["PENDING", "ACCEPTED", "REJECTED"],
