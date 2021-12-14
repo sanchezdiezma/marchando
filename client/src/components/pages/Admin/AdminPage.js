@@ -4,8 +4,8 @@ import AdminService from "../../../services/admin.service";
 import RestaurantCard from "../RestaurantList/RestaurantCard";
 
 class AdminPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       pendingRestaurants: [],
@@ -26,7 +26,18 @@ class AdminPage extends Component {
         this.setState({ pendingRestaurants: response.data });
       })
       .catch((err) => console.log(err));
+
+    this.refreshPendingRestaurants();
   }
+
+  refreshPendingRestaurants = () => {
+    this.adminService
+      .getPendingRestaurants()
+      .then((response) => {
+        this.setState({ pendingRestaurants: response.data });
+      })
+      .catch((err) => console.log(err));
+  };
 
   render() {
     return (
@@ -36,6 +47,7 @@ class AdminPage extends Component {
             <RestaurantCard
               updatePendingRestaurants={this.updatePendingRestaurants}
               restaurant={restaurant}
+              loggedUser={this.props.loggedUser}
             ></RestaurantCard>
           ))}
         </Row>

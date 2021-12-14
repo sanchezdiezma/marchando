@@ -21,6 +21,49 @@ router.post("/newReservation/:restaurantId", (req, res) => {
     );
 });
 
+//Buscar si un restaurante tiene reservas
+//Reservation.find({ownerId: restaurantId})
+
+router.get("/find/:restaurantId", (req, res) => {
+  const { restaurantId } = req.params;
+
+  Reservation.find({ restaurantId: restaurantId })
+    .then((reservation) => res.json(reservation))
+    .catch((err) =>
+      res.json({ err, errMessage: " Problema buscando esta reserva" })
+    );
+});
+
+//Buscar una reserva en concreto
+
+router.post("/update/:id", (req, res) => {
+  const { id } = req.params;
+
+  Reservation.findByIdAndUpdate(
+    id,
+    {
+      status: "TAKEN",
+      client: req.session.currentUser._id,
+    },
+    { new: true }
+  )
+    .then((response) => res.status(200).json(response))
+    .catch((err) => res.status(500).json(err));
+});
+
+//ruta tipo get que con req.session.currentUser._id llame a Reservation.find({client: req.session.currentUser._id})
+
+router.get("/showReservation", (req, res) => {
+  // const clientId = req.session.currentUser._id;
+
+  const { id } = req.body;
+
+  Reservation.find({ client: id })
+
+    .then((reservationClient) => res.status(200).json(reservationClient))
+    .catch((err) => res.status(500).json(err));
+});
+
 router.get("/:id", (req, res) => {
   const { id } = req.params;
 
@@ -30,5 +73,4 @@ router.get("/:id", (req, res) => {
       res.json({ err, errMessage: "Problema buscando una Reserva" })
     );
 });
-
 module.exports = router;

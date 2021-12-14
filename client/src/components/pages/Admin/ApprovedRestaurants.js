@@ -4,8 +4,8 @@ import AdminService from "../../../services/admin.service";
 import RestaurantCard from "../RestaurantList/RestaurantCard";
 
 class ApprovedRestaurants extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       acceptedRestaurants: [],
@@ -36,6 +36,7 @@ class ApprovedRestaurants extends Component {
             <RestaurantCard
               updateAcceptedRestaurants={this.updateAcceptedRestaurants}
               restaurant={restaurant}
+              loggedUser={this.props.loggedUser}
             ></RestaurantCard>
           ))}
         </Row>

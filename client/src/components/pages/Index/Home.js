@@ -1,13 +1,14 @@
 import "../Index/Home.css";
-import ImgSection1 from '../../../assets/2-5-pie.png'
-import Icon1 from '../../../assets/ico1.png'
-import Icon2 from '../../../assets/ico2.png'
-import Icon3 from '../../../assets/ico3.png'
-import Icon4 from '../../../assets/ico4.png'
-
+import ImgSection1 from "../../../assets/2-5-pie.png";
+import Icon1 from "../../../assets/ico1.png";
+import Icon2 from "../../../assets/ico2.png";
+import Icon3 from "../../../assets/ico3.png";
+import Icon4 from "../../../assets/ico4.png";
 
 function Home() {
-    return (
+  return (
+    <div>
+      
         <div>
             
             <section className="hero1">
@@ -34,9 +35,15 @@ function Home() {
                     </div>
 
 
+        <div className="icogroup">
+          <div className="ico-container">
+            <img className="ico" src={Icon1} alt="Icon1" />
+            <div className="text-container">
+              <p>Llega a un mayor número de clientes potenciales.</p>
             </div>
+          </div>
 
-                
+                <section>
                         <div className="icogroup">
 
                         <div className="ico-container">
@@ -105,19 +112,37 @@ function Home() {
 
             
 
+            <div className="text-container">
+              <p>Cubre cancelaciones de último minuto.</p>
+            </div>
+          </div>
 
-                
-                
-                
+          <div className="ico-container">
+            <img className="ico" src={Icon3} alt="Icon3" />
 
-            
-               
+            <div className="text-container">
+              <p>Fácil comunicación entre el cliente y el restaurante.</p>
+            </div>
+          </div>
 
+          <div className="ico-container">
+            <img className="ico" src={Icon4} alt="Icon4" />
 
-           
-            
+            <div className="text-container">
+              <p>No requiere integración adicional.</p>
+            </div>
+          </div>
         </div>
-    );
+      
+
+      <section className="heroFooter">
+        <p className="textFooter">
+          {" "}
+          Desarrollado en Ironhack con ❤️ por Alex Alcaide & JM Sánchez Diezma
+        </p>
+      </section>
+    </div>
+  );
 }
 
 export default Home;

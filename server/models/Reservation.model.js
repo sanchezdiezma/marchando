@@ -6,6 +6,12 @@ const Reservation = new Schema({
   ownerId: { type: mongoose.SchemaTypes.ObjectId, ref: "User" },
   persons: { type: Number },
   date: { type: Date, default: Date.now },
+  client: { type: mongoose.SchemaTypes.ObjectId, ref: "User" },
+  status: {
+    type: String,
+    enum: ["AVAILABLE", "TAKEN"],
+    default: "AVAILABLE",
+  },
 });
 
 Reservation.index({ location: "2dsphere" });

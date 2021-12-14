@@ -14,10 +14,10 @@ class RestaurantForm extends Component {
       priceRange: "",
       capacity: "",
       imageURL: "",
-      location: {
-        Type: "Point",
-        Coordinates: [],
-      },
+      // location: {
+      //   Type: "Point",
+      //   Coordinates: [],
+      // },
       typeOfKitchen: [],
       specialInfo: [],
     };
@@ -181,9 +181,15 @@ class RestaurantForm extends Component {
               </Form.Select>
 
               {/* <Form.Group className="mb-3" controlId="location">
-                                    <Form.Label>Localización</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.location} name="location" type="text" placeholder="Localización" />
-                                </Form.Group> */}
+                <Form.Label>Localización</Form.Label>
+                <Form.Control
+                  onChange={this.handleInputChange}
+                  value={this.state.location}
+                  name="location"
+                  type="text"
+                  placeholder="Localización"
+                />
+              </Form.Group> */}
 
               <Button variant="primary" type="submit">
                 Submit
