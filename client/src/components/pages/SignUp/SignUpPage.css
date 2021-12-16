@@ -26,7 +26,7 @@
 
 h2 {
     text-align: center;
-    color: #f1c1b6;
+    color: coral
     
     
 }
@@ -40,7 +40,7 @@ h2 {
 
 
 .main-form-container {
-    outline: solid 2px #f1c1b6; 
+    outline: solid 2px coral;
     border-radius: 10px;
     padding: 40px;
     height: 410px;
@@ -49,7 +49,7 @@ h2 {
 
 .main-form-container h2 {
 
-    color: #f1c1b6;
+    color: coral;
     font-size: 1.5em;
     white-space: pre;
     margin-bottom:20px ;

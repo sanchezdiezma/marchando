@@ -29,125 +29,43 @@ class RestaurantCard extends Component {
       .catch((err) => console.log(err));
   };
 
-<<<<<<< HEAD
-  render() {
-    return (
-      <Col md={4} style={{ overflow: "hidden" }}>
-        <Card className="coaster-card">
-          <Card.Img variant="top" src={this.props.restaurant.imageURL} />
-          <Card.Body>
-            <div className="tittle-selector">
-              <Card.Title>{this.props.restaurant.name}</Card.Title>
-            </div>
-            <hr></hr>
-
-            <Card.Text>
-              <div className="text-selector">
-                <p className="subtittle">Dirección</p>
-                {this.props.restaurant.direction}
-                <hr></hr>
-              </div>
-
-              <div className="text-selector">
-                <p className="subtittle">Descripción</p>
-                {this.props.restaurant.description}
-                <hr></hr>
-              </div>
-
-              <div className="text-selector">
-                <p className="subtittle">Rango de precios</p>
-                {this.props.restaurant.priceRange}
-                <hr></hr>
-              </div>
-
-              <div className="text-selector">
-                <p className="subtittle">Capacidad</p>
-                {this.props.restaurant.capacity}
-                <hr></hr>
-              </div>
-
-              
-              <div className="text-selector">
-                <p className="subtittle">Rango de precios</p>
-                {this.props.restaurant.priceRange}
-                <hr></hr>
-              </div>
-
-
-              <div className="text-selector">
-                <p className="subtittle">Capacidad</p>
-                {this.props.restaurant.capacity}
-                <hr></hr>
-              </div>
-
-              <div className="text-selector">
-                <p className="subtittle">Tipo de cocina</p>
-                {this.props.restaurant.typeOfKitchen}
-                <hr></hr>
-              </div>
-
-              <div className="text-selector">
-                <p className="subtittle">Información Adicional</p>
-                {this.props.restaurant.specialInfo}
-                <hr></hr>
-              </div>
-=======
-  openModal = () => {
-    this.setState({
-      showModal: true,
-    });
-  };
->>>>>>> main
-
-  closeModal = () => {
-    this.setState({
-      showModal: false,
-    });
-  };
-
   render() {
     return (
       <>
         <Col md={4} style={{ overflow: "hidden" }}>
-          <Card className="coaster-card">
+          <Card id="coaster-card">
             <Card.Img variant="top" src={this.props.restaurant.imageURL} />
             <Card.Body>
               <div className="tittle-selector">
                 <Card.Title>{this.props.restaurant.name}</Card.Title>
               </div>
               <hr></hr>
-
               <Card.Text>
                 <div className="text-selector">
                   <p className="subtittle">Dirección</p>
                   {this.props.restaurant.direction}
                   <hr></hr>
                 </div>
-
                 <div className="text-selector">
                   <p className="subtittle">Descripción</p>
                   {this.props.restaurant.description}
                   <hr></hr>
                 </div>
-
                 <div className="text-selector">
                   <p className="subtittle">Rango de precios</p>
                   {this.props.restaurant.priceRange}
                   <hr></hr>
                 </div>
-
                 <div className="text-selector">
                   <p className="subtittle">Capacidad</p>
                   {this.props.restaurant.capacity}
                   <hr></hr>
                 </div>
-
                 <div className="text-selector">
                   <p className="subtittle">Tipo de cocina</p>
                   {this.props.restaurant.typeOfKitchen}
                   <hr></hr>
                 </div>
-
                 <div className="text-selector">
                   <p className="subtittle">Información Adicional</p>
                   {this.props.restaurant.specialInfo}
@@ -214,5 +132,4 @@ class RestaurantCard extends Component {
     );
   }
 }
-
 export default RestaurantCard;

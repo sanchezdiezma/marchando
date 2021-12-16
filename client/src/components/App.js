@@ -87,10 +87,10 @@ class App extends Component {
               <RejectedRestaurants loggedUser={this.state.loggedUser} />
             )}
           />
-          <Route
+           <Route
             path="/restaurantes"
             render={(props) => <Mapsview loggedUser={this.state.loggedUser} />}
-          />
+          /> 
           <Route
             path="/userProfile"
             render={(props) => (

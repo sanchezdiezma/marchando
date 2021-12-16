@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { InputGroup, FormControl } from "react-bootstrap";
-import Maps from "../../Maps";
+import Maps from "./Maps"
 
 class Mapsview extends Component {
   constructor(props) {
