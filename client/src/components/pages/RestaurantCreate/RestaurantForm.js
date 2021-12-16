@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import RestaurantService from "../../../services/restaurant.service";
+import Geocode from "react-geocode";
 
 class RestaurantForm extends Component {
   constructor(props) {
@@ -13,12 +14,13 @@ class RestaurantForm extends Component {
       priceRange: "",
       capacity: "",
       imageURL: "",
-      // location: {
-      //   Type: "Point",
-      //   Coordinates: [],
-      // },
+      address: "",
       typeOfKitchen: [],
       specialInfo: [],
+      location: {
+        type: "Point",
+        coordinates: []
+      }
     };
 
     this.restaurantService = new RestaurantService();
@@ -31,8 +33,18 @@ class RestaurantForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    this.restaurantService
-      .createRestaurant(this.state)
+    Geocode.setApiKey("AIzaSyB2S44K34qk8CkQtWSYkFycgcJHegFLzrk");
+    Geocode.setRegion("es");
+
+    Geocode.fromAddress(this.state.address).then(
+      (response) => {
+        const { lat, lng } = response.results[0].geometry.location;
+        const location = { ...this.state.location }
+        location.coordinates = [lat, lng]
+        this.setState({ location })
+        return this.restaurantService
+          .createRestaurant(this.state)
+      })
       .then((response) => {
         console.log(response.data);
         this.props.history.push(`/restaurant/details/${response.data._id}`);
@@ -67,13 +79,13 @@ class RestaurantForm extends Component {
                 />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="direction">
+              <Form.Group className="mb-3" controlId="address">
                 <Form.Label>Direccion</Form.Label>
                 <Form.Control
                   onChange={this.handleInputChange}
-                  value={this.state.direction}
-                  name="direction"
-                  type="direction"
+                  value={this.state.address}
+                  name="address"
+                  type="address"
                   placeholder="Introduce aquí tu direccion"
                 />
               </Form.Group>
@@ -178,17 +190,6 @@ class RestaurantForm extends Component {
                 <option value="ALERGIAS">Alergias</option>
                 <option value="CELIACOS">Celiacos</option>
               </Form.Select>
-
-              {/* <Form.Group className="mb-3" controlId="location">
-                <Form.Label>Localización</Form.Label>
-                <Form.Control
-                  onChange={this.handleInputChange}
-                  value={this.state.location}
-                  name="location"
-                  type="text"
-                  placeholder="Localización"
-                />
-              </Form.Group> */}
 
               <Button variant="primary" type="submit">
                 Submit

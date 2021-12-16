@@ -12,31 +12,31 @@ router.get("/allRestaurants", (req, res) => {
 router.post("/newRestaurant", (req, res) => {
   const {
     name,
-    direction,
     description,
     priceRange,
     capacity,
     imageURL,
     typeOfKitchen,
     specialInfo,
-    status,
+    location
   } = req.body;
+
+  console.log(req.body)
 
   Restaurant.create({
     name,
-    ownerId: req.session.currentUser._id,
-    direction,
     description,
     priceRange,
     capacity,
     imageURL,
     typeOfKitchen,
     specialInfo,
-    status,
+    location
   })
-    .then((newRestaurant) => res.json(newRestaurant))
-    .catch((err) =>
-      res.json({ err, errMessage: "Problema creando Restaurante" })
+    .then((newRestaurant) => res.status(200).json(newRestaurant))
+    .catch((err) => {
+      console.log(err)
+      res.status(400).json({ err, errMessage: "Problema creando Restaurante" })}
     );
 });
 

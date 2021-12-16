@@ -58,14 +58,15 @@ body {
 }
 
 .hero3 {
-    background-color: #F2C1B6;
+     background-image: url("../../../assets/section2.svg");
      height: 100vh;
      background-size: cover;
      background-repeat: no-repeat;
      gap: 10rem;
      align-items: center;
-    
 }
+
+
 
 .hero3 .imgHero3 {
 
@@ -74,6 +75,8 @@ body {
     width: 100%;
 
 }
+
+
 
 .hero4 {
     background-color: #FF802A;
@@ -103,7 +106,7 @@ body {
 }
 
 .text p {
-    color: wheat;
+    color: #ffff8f;
     font-size: 3em;
     font-weight: 600;
     letter-spacing: -2px;
@@ -139,7 +142,7 @@ body {
 }
 .icogroup p {
 
-   color: rgb(255, 255, 255);
+   color: #ffff8f;
     text-align: center;
     font-weight: 600;
     
@@ -149,7 +152,7 @@ body {
 .grafico {
     display: flex;
     align-items: center;
-    padding: 4% 5% 6% 5%;
+    padding: 4% 5% 2% 5%;
     justify-content: space-evenly;
     width: 100vw;
 }
@@ -165,6 +168,7 @@ body {
     width: 120px;
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 

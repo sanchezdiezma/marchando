@@ -1,18 +1,28 @@
-.coaster-card {
+#coaster-card {
   margin-bottom: 40px;
+  border-radius: 4px;
+  background-color: #F2F2F2;
+  box-shadow: 4px 4px 10px rgb(232, 231, 231)
   
 }
 
-.coaster-card h3 {
+#coaster-card h3 {
   margin-top: 10px;
   font-weight: 200;
 }
 
-.coaster-card img {
+#coaster-card img {
   height: 200px;
   object-fit: cover;
   width: 100%;
   align-items: center;
+}
+
+#coaster-card img:hover {
+    
+   filter: grayscale(80%);
+  
+   overflow:hidden;
 }
 
 .btn-block {
