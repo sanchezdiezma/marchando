@@ -18,17 +18,3 @@ RUTAS BACKEND
 
 
 
-Creado Modelo Aforo
-
-Rutas -
-
-
-
-Instalaciones -
-
-Moongose
-Express
-Npm Install
-React Doom
-
-Ver repo en Github

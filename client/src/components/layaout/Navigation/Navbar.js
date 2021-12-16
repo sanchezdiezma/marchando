@@ -14,7 +14,7 @@ const Navigation = ({ loggedUser, storeUser }) => {
   };
 
   return (
-    <Navbar className="navbar" expand="lg">
+    <Navbar style={{background: "transparent", position: "absolute"}} className="navbar" expand="lg">
       <Container>
         <Navbar.Brand href="/"></Navbar.Brand>
         <Nav className="me-auto">

@@ -24,8 +24,8 @@ function Home() {
           </div>
           <div className="text">
             <p>
-              Restaurante no pierdas parte del pastel de tu negocio gestionando
-              de manera eficiente las cancelaciones de última hora.
+              Si tienes un restaurante no pierdas parte del pastel de tu negocio, gestiona
+              de manera eficiente las cancelaciones de última hora con la ayuda de Marchando.
             </p>
           </div>
         </div>
@@ -33,7 +33,7 @@ function Home() {
           <div className="ico-container">
             <img className="ico" src={Icon1} alt="Icon1" />
             <div className="text-container">
-              <p>Llega a un mayor número de clientes potenciales.</p>
+              <p>Llega a un mayor número de clientes.</p>
             </div>
           </div>
           <div className="ico-container">
@@ -46,7 +46,7 @@ function Home() {
             <img className="ico" src={Icon3} alt="Icon3" />
             <div className="text-container">
               <p>
-                Gestionamos la comunicación entre el cliente y el restaurante.
+                 Comunicación entre cliente y restaurante.
               </p>
             </div>
           </div>
@@ -59,15 +59,16 @@ function Home() {
         </div>
       </section>
 
-      <section className="hero3 fl-container fl-centerh fl-centerv"></section>
+      
 
       <section className="heroFooter">
         <p className="textFooter">
           {" "}
-          Desarrollado en Ironhack a full ilusion 🐭 por Alex Alcaide & JM
+          Desarrollado en Ironhack con 🔥 por Alex Alcaide & JM
           Sánchez Diezma
         </p>
       </section>
+
     </div>
   );
 }
