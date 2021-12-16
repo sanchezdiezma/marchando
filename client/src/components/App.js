@@ -39,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
+        <Navbar  storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
         <Switch>
           <Route path="/" exact strict render={() => <Home></Home>}></Route>
           <Route

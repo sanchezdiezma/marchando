@@ -5,17 +5,13 @@
 
 body {
     
-    font-family: serif;
+    font-family: 'Roboto', sans-serif;
     
 }
 
-.navbar {
-    background: none !important;
-    -webkit-backdrop-filter: blur(60px) #ffffff00 !important;
-}
 
 .hero1 {
-
+    
     height: 100vh;
     background-image: url("../../../assets/poke.jpg");
     background-size: cover;
@@ -62,7 +58,6 @@ body {
      height: 100vh;
      background-size: cover;
      background-repeat: no-repeat;
-     gap: 10rem;
      align-items: center;
 }
 

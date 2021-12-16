@@ -8,7 +8,7 @@ body #root{
 }
 
 #button-custom {
-    background-color: #ffa380;
+    background-color: coral;
     border-color: #fdf8f2;
     color: #fdf8f2;
     margin-bottom: auto;
@@ -21,6 +21,6 @@ body #root{
 }
 
 #button-custom:hover {
-  background-color: #ca7756;
+  background-color: #ffa380;
 }
 

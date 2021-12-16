@@ -13,11 +13,10 @@
     
 }
 
-.img:hover {
+/* .img:hover {
     
-    padding-right: 40px;
-    transition: 1s;
-}
+   filter: opacity(5%);
+} */
 
 
 .wrapper {
