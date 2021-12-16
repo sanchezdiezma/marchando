@@ -3,7 +3,7 @@ import axios from "axios";
 class RestaurantService {
   constructor() {
     this.app = axios.create({
-      baseURL: "http://localhost:5005/restaurantes",
+      baseURL: `${process.env.REACT_APP_BASE_URL}/restaurantes`,
       withCredentials: true,
     });
   }

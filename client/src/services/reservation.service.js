@@ -3,7 +3,7 @@ import axios from "axios";
 class ReservationService {
   constructor() {
     this.app = axios.create({
-      baseURL: "http://localhost:5005/reservation",
+      baseURL: `${process.env.REACT_APP_BASE_URL}/reservation`,
       withCredentials: true,
     });
   }
