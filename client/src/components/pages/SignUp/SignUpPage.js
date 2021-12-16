@@ -43,7 +43,7 @@ class SignupPage extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{ paddingTop: "56px" }}>
         <Row className="justify-content-md-center align-items-center wrapper">
           <Col md={{ span: 4 }}>
             <img className="img" src={signupImg} alt="logoSignUp" />
@@ -96,10 +96,11 @@ class SignupPage extends Component {
                     <option value="USER">Usuario</option>
                     <option value="RESTAURANT">Restaurante</option>
                   </Form.Select>
-
+                  <div className="d-flex justify-content-center" style={{ paddingTop: "10px" }} >
                   <Button id="button-custom" type="submit">
                     Marchando
                   </Button>
+                  </div>
                 </Form>
               </div>
             </div>

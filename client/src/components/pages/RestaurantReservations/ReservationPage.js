@@ -26,9 +26,9 @@ class ReservationPage extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{ paddingTop: "56px" }} className="ml-1">
         <Row className="justify-content-around">
-          <h1>Estas son todas tus reservas</h1>
+          <h2 className="admin-title">- Reservas Aceptadas -</h2>
           {this.state.reservations?.map((reservation) => (
             <ReservationsUserCard
               key={reservation._id}

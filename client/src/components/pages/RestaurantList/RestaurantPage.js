@@ -70,7 +70,7 @@ class RestaurantDetails extends Component {
     } = this.state;
 
     return (
-      <Container>
+      <Container style={{ paddingTop: "56px" }}>
         <h1>Detalles</h1>
 
         <Row className="justify-content-around">

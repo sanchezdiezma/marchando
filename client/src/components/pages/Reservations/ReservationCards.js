@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Modal, Button, Card } from "react-bootstrap";
+import { Container,Col, Modal, Button, Card } from "react-bootstrap";
 import ReservationForm from "./ReservationForm";
 import UserService from "../../../services/reservation.service";
 
@@ -39,7 +39,9 @@ class ReservationCard extends Component {
 
   render() {
     return (
-      <Col md={4} style={{ overflow: "hidden" }}>
+      <Container style={{ paddingTop: "56px" }}>
+        <Col md={{span: 6, offset: 3}} style={{ overflow: "hidden" }}>
+          
         <Card>
           <Card.Img variant="top" src={this.props.restaurant.imageURL} />
           <Card.Body>
@@ -78,7 +80,7 @@ class ReservationCard extends Component {
                 <hr></hr>
               </div>
             </Card.Text>
-            <hr></hr>
+           
             <div className="d-flex justify-content-md-center">
               <Button
                 onClick={this.openModal}
@@ -90,6 +92,7 @@ class ReservationCard extends Component {
             </div>
           </Card.Body>
         </Card>
+     
 
         <Modal
           show={this.state.showModal}
@@ -107,6 +110,7 @@ class ReservationCard extends Component {
           </Modal.Body>
         </Modal>
       </Col>
+      </Container>
     );
   }
 }

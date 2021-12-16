@@ -40,6 +40,7 @@ class App extends Component {
     return (
       <div>
         <Navbar  storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
+        <main >
         <Switch>
           <Route path="/" exact strict render={() => <Home></Home>}></Route>
           <Route
@@ -96,7 +97,7 @@ class App extends Component {
           />
            <Route
             path="/restaurantes"
-            render={(props) => <Mapsview loggedUser={this.state.loggedUser} />}
+            render={(props) => <ApprovedRestaurants loggedUser={this.state.loggedUser} />}
           /> 
           <Route
             path="/userProfile"
@@ -111,6 +112,7 @@ class App extends Component {
             )}
           />
         </Switch>
+        </main>
       </div>
     );
   }

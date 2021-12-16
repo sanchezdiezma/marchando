@@ -41,9 +41,9 @@ class AdminPage extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{ paddingTop: "56px" }} className="ml-1">
         <Row className="justify-content-around">
-          <h1> Restaurantes con solicitud </h1>
+          <h2 className="admin-title"> - Restaurantes con Solicitud -</h2>
           {this.state.pendingRestaurants?.map((restaurant) => (
             <RestaurantCard
               updatePendingRestaurants={this.updatePendingRestaurants}

@@ -60,7 +60,7 @@ class RestaurantForm extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{ paddingTop: "56px" }}>
         <Row>
           <Col md={{ span: 4, offset: 4 }}>
             <h2>Crear Restaurante Nuevo</h2>
@@ -191,9 +191,18 @@ class RestaurantForm extends Component {
                 <option value="CELIACOS">Celiacos</option>
               </Form.Select>
 
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
+              <div className="d-flex justify-content-center" style={{ paddingBottom: "56px" }} >
+
+                <Button id="button-custom"   type="submit">
+                  Submit
+                </Button>
+
+                </div>
+                
+
+              
+
+              
             </Form>
           </Col>
         </Row>

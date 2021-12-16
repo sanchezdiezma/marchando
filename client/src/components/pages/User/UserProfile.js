@@ -26,9 +26,10 @@ class UserProfile extends Component {
 
   render() {
     return (
-      <Container>
+      
+      <Container style={{ paddingTop: "56px" }}>
         <Row className="justify-content-around">
-          <h1>Estas son todas tus reservas</h1>
+          <h2 className="admin-title">- Estas son todas tus reservas -</h2>
           {this.state.reservations?.map((reservation) => (
             <ReservationsUserCard
               key={reservation._id}

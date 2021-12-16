@@ -65,6 +65,7 @@ class RestaurantCard extends Component {
       <>
         <Col md={4} style={{ overflow: "hidden" }}>
           <Card id="coaster-card">
+            <h2 className=" admin-title"> - Restaurantes - </h2>
             <Card.Img variant="top" src={this.props.restaurant.imageURL} />
             <Card.Body>
               <div className="tittle-selector">

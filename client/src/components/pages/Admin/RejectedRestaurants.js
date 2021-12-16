@@ -30,7 +30,7 @@ class RejectedRestaurants extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{ paddingTop: "56px" }} className="ml-1">
         <Row className="justify-content-around">
           {this.state.rejectedRestaurants?.map((restaurant) => (
             <RestaurantCard

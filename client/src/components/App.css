@@ -1,10 +1,33 @@
 body #root{
   background-color: #fdf8f2;
+  
+}
+.navbar {
+  z-index: 100;
+}
+.navbar a {
+  font-weight: 700;
 }
 
+.admin-title{
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  padding: 20px;
+  font-size: 30px;
+  border-width:1px;
+  border-style: solid;
+  border-color:coral;
+  border-radius: 15px;
+  background-color: coral;
+}
+
+
+
 #root {
-  height: 100vh;
-  /* overflow: hidden; */
+  min-height: 100vh;
+  height: 100%;
+  
 }
 
 #button-custom {
@@ -13,11 +36,8 @@ body #root{
     color: #fdf8f2;
     margin-bottom: auto;
     display: inline-block;
-
     
-    
-    
-    
+   
 }
 
 #button-custom:hover {

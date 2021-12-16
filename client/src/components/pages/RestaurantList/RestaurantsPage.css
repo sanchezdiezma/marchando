@@ -1,15 +1,25 @@
 #coaster-card {
   margin-bottom: 40px;
-  border-radius: 4px;
+  border-radius: 15px;
   background-color: #F2F2F2;
-  box-shadow: 4px 4px 10px rgb(232, 231, 231)
+  box-shadow: 4px 4px 10px rgb(232, 231, 231);
+  border-color: #fdf8f2;
+  
   
 }
 
 #coaster-card h3 {
   margin-top: 10px;
   font-weight: 200;
+ 
 }
+
+.subtittle {
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+}
+
+
 
 #coaster-card img {
   height: 200px;
@@ -19,10 +29,11 @@
 }
 
 #coaster-card img:hover {
-    
-   filter: grayscale(80%);
   
-   overflow:hidden;
+  filter: grayscale(80%);
+  overflow:hidden;
+    
+  
 }
 
 .btn-block {
@@ -31,7 +42,7 @@
 
 
 .tittle-selector {
-
+  
   font-weight: bold;
   text-align: center;
   color: coral;

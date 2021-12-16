@@ -59,10 +59,11 @@ class LoginPage extends Component {
                                        <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" placeholder="Password" />
                                         </Form.Group>
                             
-
+                                        <div className="d-flex justify-content-center" style={{ paddingTop: "30px" }} >
                                         <Button id='button-custom' type="submit">
                                             Marchando
                                         </Button>
+                                        </div>
                                     </Form>
                         </div>
                     </div>
