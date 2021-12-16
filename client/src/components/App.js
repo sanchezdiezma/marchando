@@ -9,7 +9,7 @@ import RestaurantForm from "./pages/RestaurantCreate/RestaurantForm";
 import RestaurantPage from "./pages/RestaurantList/RestaurantPage";
 import AdminPage from "./pages/Admin/AdminPage";
 import Home from "../components/pages/Index/Home";
-import Mapsview from "../components/pages/MapsPages/Mapsview";
+import Maps from "../components/pages/MapsPages/Maps";
 import ApprovedRestaurants from "./pages/Admin/ApprovedRestaurants";
 import RejectedRestaurants from "./pages/Admin/RejectedRestaurants";
 import UserProfile from "./pages/User/UserProfile";
@@ -94,10 +94,12 @@ class App extends Component {
               <RejectedRestaurants loggedUser={this.state.loggedUser} />
             )}
           />
-           <Route
+          <Route
             path="/restaurantes"
-            render={(props) => <Mapsview loggedUser={this.state.loggedUser} />}
-          /> 
+            render={(props) => (
+              <ApprovedRestaurants loggedUser={this.state.loggedUser} />
+            )}
+          />
           <Route
             path="/userProfile"
             render={(props) => (

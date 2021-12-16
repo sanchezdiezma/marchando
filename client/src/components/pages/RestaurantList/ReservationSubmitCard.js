@@ -2,12 +2,25 @@ import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 import ReservationService from "../../../services/reservation.service";
 
+const parseDate = (date) => {
+  date = new Date(date);
+  return (
+    date.getHours().toString().padStart(2, "0") +
+    ":" +
+    date.getMinutes().toString().padStart(2, "0") +
+    "h" +
+    " día " +
+    date.getDate()
+  );
+};
+
 class ReservationSubmitCard extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       reservationId: props.reservation._id,
+      showModal: false,
     };
 
     this.reservationService = new ReservationService();
@@ -18,10 +31,14 @@ class ReservationSubmitCard extends Component {
 
     this.reservationService
       .updateReservation(this.state.reservationId)
-      .then((res) => console.log(res.data))
+      .then((res) => this.props.refreshReservations())
       .catch((err) => console.log(err));
+  };
 
-    this.props.refreshReservations();
+  closeModal = () => {
+    this.setState({
+      showModal: false,
+    });
   };
 
   render() {
@@ -37,10 +54,10 @@ class ReservationSubmitCard extends Component {
         <Form.Group className="mb-3" controlId="description">
           <Form.Label>Horario:</Form.Label>
           <Form.Text name="date" type="string">
-            {this.props.reservation.date}
+            {parseDate(this.props.reservation.date)}
           </Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button closeModal={this.closeModal} variant="primary" type="submit">
           Hacer Reserva
         </Button>
       </Form>

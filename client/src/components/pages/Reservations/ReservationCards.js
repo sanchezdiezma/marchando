@@ -10,6 +10,7 @@ class ReservationCard extends Component {
     this.state = {
       persons: "",
       date: "",
+      showModal: false,
     };
 
     this.userService = new UserService();

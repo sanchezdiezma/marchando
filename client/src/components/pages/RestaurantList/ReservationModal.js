@@ -33,6 +33,10 @@ class ReservationModal extends Component {
         const availableReservations = response.data.filter(
           (reservation) => reservation.status === "AVAILABLE"
         );
+        console.log(
+          "available reservations en el modal",
+          availableReservations
+        );
         this.setState({ reservations: availableReservations });
       })
       .catch((err) => console.log(err));
@@ -44,6 +48,7 @@ class ReservationModal extends Component {
         {this.state.reservations.map((reservation) => {
           return (
             <ReservationSubmitCard
+              key={reservation._id}
               refreshReservations={this.refreshReservations}
               reservation={reservation}
             />
