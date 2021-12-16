@@ -3,7 +3,7 @@ import axios from "axios";
 class AdminService {
   constructor() {
     this.app = axios.create({
-      baseURL: "http://localhost:5005/admin",
+      baseURL: `${process.env.REACT_APP_BASE_URL}/admin`,
       withCredentials: true,
     });
   }
