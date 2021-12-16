@@ -14,6 +14,7 @@ import ApprovedRestaurants from "./pages/Admin/ApprovedRestaurants";
 import RejectedRestaurants from "./pages/Admin/RejectedRestaurants";
 import UserProfile from "./pages/User/UserProfile";
 import ReservationList from "./pages/Reservations/ReservationList";
+import ReservationPage from "./pages/RestaurantReservations/ReservationPage";
 
 class App extends Component {
   constructor(pros) {
@@ -74,6 +75,12 @@ class App extends Component {
           <Route
             path="/adminpage"
             render={(props) => <AdminPage loggedUser={this.state.loggedUser} />}
+          />
+          <Route
+            path="/reservationsAccepted"
+            render={(props) => (
+              <ReservationPage {...props} storeUser={this.storeUser} />
+            )}
           />
           <Route
             path="/acceptedRestaurants"

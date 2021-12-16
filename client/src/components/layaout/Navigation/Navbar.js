@@ -44,6 +44,9 @@ const Navigation = ({ loggedUser, storeUser }) => {
                   <Nav.Link as={Link} to="restaurantProfile">
                     Crear Reserva
                   </Nav.Link>
+                  <Nav.Link as={Link} to="/reservationsAccepted">
+                    Reservas Aceptadas
+                  </Nav.Link>
                 </>
               )}
               {loggedUser.role === "ADMIN" && (

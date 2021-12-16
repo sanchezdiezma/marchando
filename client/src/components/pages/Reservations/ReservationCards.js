@@ -5,7 +5,7 @@ import UserService from "../../../services/reservation.service";
 
 class ReservationCard extends Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {
       persons: "",

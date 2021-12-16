@@ -14,7 +14,8 @@ class ReservationService {
   updateReservation = (reservationId) =>
     this.app.post(`/update/${reservationId}`);
 
-  clientReservation = () => this.app.get();
+  clientReservation = () => this.app.get("/showReservation");
+  restaurantReservation = () => this.app.get("/showAcceptedReservations");
 }
 
 export default ReservationService;

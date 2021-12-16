@@ -24,7 +24,7 @@ function Home() {
           <div className="text">
             <p>
               No pierdas parte del pastel de tu negocio gestionando de manera
-              eficiente las cancelaciones de último minuto
+              eficiente las cancelaciones de última hora.
             </p>
           </div>
         </div>
@@ -41,7 +41,7 @@ function Home() {
             <img className="ico" src={Icon2} alt="Icon2" />
 
             <div className="text-container">
-              <p>Cubre cancelaciones de último minuto.</p>
+              <p>Cubre cancelaciones de última hora.</p>
             </div>
           </div>
 
@@ -49,7 +49,9 @@ function Home() {
             <img className="ico" src={Icon3} alt="Icon3" />
 
             <div className="text-container">
-              <p>Fácil comunicación entre el cliente y el restaurante.</p>
+              <p>
+                Gestionamos la comunicación entre el cliente y el restaurante.
+              </p>
             </div>
           </div>
 

@@ -56,11 +56,21 @@ router.post("/update/:id", (req, res) => {
 router.get("/showReservation", (req, res) => {
   // const clientId = req.session.currentUser._id;
 
-  const { id } = req.body;
-
-  Reservation.find({ client: id })
-
+  Reservation.find({ client: req.session.currentUser._id })
+    .populate("restaurantId")
     .then((reservationClient) => res.status(200).json(reservationClient))
+    .catch((err) => res.status(500).json(err));
+});
+
+router.get("/showAcceptedReservations", (req, res) => {
+  // const clientId = req.session.currentUser._id;
+
+  Reservation.find({ ownerId: req.session.currentUser._id })
+    .populate("restaurantId")
+    .populate("client")
+    .then((reservationRestaurant) =>
+      res.status(200).json(reservationRestaurant)
+    )
     .catch((err) => res.status(500).json(err));
 });
 

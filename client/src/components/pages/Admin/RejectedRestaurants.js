@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Button } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import AdminService from "../../../services/admin.service";
 import RestaurantCard from "../RestaurantList/RestaurantCard";
 

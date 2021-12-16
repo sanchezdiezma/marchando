@@ -27,6 +27,37 @@ class RestaurantCard extends Component {
         this.props.updatePendingRestaurants(response.data);
       })
       .catch((err) => console.log(err));
+
+    this.refreshPendingRestaurants();
+  };
+
+  deleteClick = (e) => {
+    this.adminService
+      .deleteOneRestaurant(this.state.restaurant._id)
+      .then((response) => {
+        return this.adminService.getRejectedRestaurants();
+      })
+      .catch((err) => console.log(err));
+
+    this.refreshdeletedRestaurants();
+  };
+
+  refreshPendingRestaurants = () => {
+    this.adminService
+      .getPendingRestaurants()
+      .then((response) => {
+        this.setState({ restaurant: response.data });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  refreshdeletedRestaurants = () => {
+    this.adminService
+      .deleteOneRestaurant()
+      .then((response) => {
+        this.setState({ restaurant: response.data });
+      })
+      .catch((err) => console.log(err));
   };
 
   openModal = () => {
@@ -106,11 +137,11 @@ class RestaurantCard extends Component {
                   </Button>
                 </div>
               )}
-              {this.props.loggedUser.role === "ADMIN" && (
+              {this.state.status === "REJECTED" && (
                 <div className="d-flex justify-content-md-center">
                   <Button
                     id="button-custom"
-                    onClick={(e) => this.handleClick(e, "ACCEPTED")}
+                    onClick={(e) => this.deleteClick(e)}
                   >
                     ELIMINAR
                   </Button>
@@ -137,6 +168,7 @@ class RestaurantCard extends Component {
                       <ReservationModal
                         closeModal={this.closeModal}
                         restaurant={this.props.restaurant}
+                        onHide={this.closeModal}
                       />
                     </Modal.Body>
                   </Modal>
@@ -145,7 +177,6 @@ class RestaurantCard extends Component {
             </Card.Body>
           </Card>
         </Col>
-        <ReservationModal restaurant={this.state.restaurant}></ReservationModal>
       </>
     );
   }

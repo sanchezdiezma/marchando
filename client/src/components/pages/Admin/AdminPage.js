@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import AdminService from "../../../services/admin.service";
 import RestaurantCard from "../RestaurantList/RestaurantCard";
 
@@ -43,6 +43,7 @@ class AdminPage extends Component {
     return (
       <Container>
         <Row className="justify-content-around">
+          <h1> Restaurantes con solicitud </h1>
           {this.state.pendingRestaurants?.map((restaurant) => (
             <RestaurantCard
               updatePendingRestaurants={this.updatePendingRestaurants}

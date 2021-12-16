@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Container, Row } from "react-bootstrap";
 import ReservationService from "../../../services/reservation.service";
-import ReservationsUserCard from "./ReservationsUserCard";
+import ReservationsUserCard from "../User/ReservationsUserCard";
 
-class UserProfile extends Component {
+class ReservationPage extends Component {
   constructor(props) {
     super(props);
 
@@ -16,7 +16,7 @@ class UserProfile extends Component {
 
   componentDidMount() {
     this.reservationService
-      .clientReservation()
+      .restaurantReservation()
       .then((response) => {
         console.log(response);
         this.setState({ reservations: response.data });
@@ -41,4 +41,4 @@ class UserProfile extends Component {
   }
 }
 
-export default UserProfile;
+export default ReservationPage;
