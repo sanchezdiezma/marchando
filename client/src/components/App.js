@@ -9,7 +9,7 @@ import RestaurantForm from "./pages/RestaurantCreate/RestaurantForm";
 import RestaurantPage from "./pages/RestaurantList/RestaurantPage";
 import AdminPage from "./pages/Admin/AdminPage";
 import Home from "../components/pages/Index/Home";
-import Mapsview from "../components/pages/MapsPages/Mapsview";
+import MapContainer from "../components/pages/MapsPages/Mapsview";
 import ApprovedRestaurants from "./pages/Admin/ApprovedRestaurants";
 import RejectedRestaurants from "./pages/Admin/RejectedRestaurants";
 import UserProfile from "./pages/User/UserProfile";
@@ -39,8 +39,12 @@ class App extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <Navbar  storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
         <main >
+=======
+        <Navbar storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
+>>>>>>> f3d167c538a6cb3f0fd412ebdcb319de2cac65f7
         <Switch>
           <Route path="/" exact strict render={() => <Home></Home>}></Route>
           <Route
@@ -95,10 +99,17 @@ class App extends Component {
               <RejectedRestaurants loggedUser={this.state.loggedUser} />
             )}
           />
-           <Route
+          <Route
             path="/restaurantes"
+<<<<<<< HEAD
             render={(props) => <ApprovedRestaurants loggedUser={this.state.loggedUser} />}
           /> 
+=======
+            render={(props) => (
+              <ApprovedRestaurants loggedUser={this.state.loggedUser} />
+            )}
+          />
+>>>>>>> f3d167c538a6cb3f0fd412ebdcb319de2cac65f7
           <Route
             path="/userProfile"
             render={(props) => (

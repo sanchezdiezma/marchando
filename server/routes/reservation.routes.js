@@ -72,6 +72,7 @@ router.get("/showAcceptedReservations", (req, res) => {
       res.status(200).json(reservationRestaurant)
     )
     .catch((err) => res.status(500).json(err));
+  0;
 });
 
 router.get("/:id", (req, res) => {

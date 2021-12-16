@@ -37,6 +37,9 @@ class RestaurantCard extends Component {
       .then((response) => {
         return this.adminService.getRejectedRestaurants();
       })
+      .then((response) => {
+        this.props.updateRejectedRestaurants(response.data);
+      })
       .catch((err) => console.log(err));
 
     this.refreshdeletedRestaurants();
@@ -58,6 +61,17 @@ class RestaurantCard extends Component {
         this.setState({ restaurant: response.data });
       })
       .catch((err) => console.log(err));
+  };
+  openModal = () => {
+    this.setState({
+      showModal: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      showModal: false,
+    });
   };
 
   render() {
@@ -84,9 +98,8 @@ class RestaurantCard extends Component {
                   <hr></hr>
                 </div>
                 <div className="text-selector">
-                  <p className="subtittle">Rango de precios</p>
-                  {this.props.restaurant.priceRange}
-                  <hr></hr>
+                  <p className="subtittle">Ticket medio</p>
+                  {this.props.restaurant.priceRange} €<hr></hr>
                 </div>
                 <div className="text-selector">
                   <p className="subtittle">Capacidad</p>

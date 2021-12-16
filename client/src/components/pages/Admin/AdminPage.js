@@ -15,6 +15,10 @@ class AdminPage extends Component {
     this.adminService = new AdminService();
   }
 
+  updateRejectedRestaurants = (restaurants) => {
+    this.setState({ rejectedRestaurants: restaurants });
+  };
+
   updatePendingRestaurants = (restaurants) => {
     this.setState({ pendingRestaurants: restaurants });
   };

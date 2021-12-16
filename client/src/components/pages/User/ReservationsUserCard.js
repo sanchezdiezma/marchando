@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 import { Col, Card } from "react-bootstrap";
 
+const parseDate = (date) => {
+  date = new Date(date);
+  return (
+    date.getHours().toString().padStart(2, "0") +
+    ":" +
+    date.getMinutes().toString().padStart(2, "0") +
+    "h" +
+    " día " +
+    date.getDate()
+  );
+};
+
 class ReservationsUserCard extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +52,7 @@ class ReservationsUserCard extends Component {
               </div>
               <div className="text-selector">
                 <p className="subtittle">Hora</p>
-                {this.props.reservation.date}
+                {parseDate(this.props.reservation.date)}
                 <hr></hr>
               </div>
             </Card.Text>
