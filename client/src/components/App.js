@@ -9,7 +9,7 @@ import RestaurantForm from "./pages/RestaurantCreate/RestaurantForm";
 import RestaurantPage from "./pages/RestaurantList/RestaurantPage";
 import AdminPage from "./pages/Admin/AdminPage";
 import Home from "../components/pages/Index/Home";
-import Maps from "../components/pages/MapsPages/Maps";
+import MapContainer from "../components/pages/MapsPages/Mapsview";
 import ApprovedRestaurants from "./pages/Admin/ApprovedRestaurants";
 import RejectedRestaurants from "./pages/Admin/RejectedRestaurants";
 import UserProfile from "./pages/User/UserProfile";
@@ -39,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar  storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
+        <Navbar storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
         <Switch>
           <Route path="/" exact strict render={() => <Home></Home>}></Route>
           <Route

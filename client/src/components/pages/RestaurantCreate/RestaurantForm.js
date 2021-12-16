@@ -19,8 +19,8 @@ class RestaurantForm extends Component {
       specialInfo: [],
       location: {
         type: "Point",
-        coordinates: []
-      }
+        coordinates: [],
+      },
     };
 
     this.restaurantService = new RestaurantService();
@@ -36,14 +36,13 @@ class RestaurantForm extends Component {
     Geocode.setApiKey("AIzaSyB2S44K34qk8CkQtWSYkFycgcJHegFLzrk");
     Geocode.setRegion("es");
 
-    Geocode.fromAddress(this.state.address).then(
-      (response) => {
+    Geocode.fromAddress(this.state.address)
+      .then((response) => {
         const { lat, lng } = response.results[0].geometry.location;
-        const location = { ...this.state.location }
-        location.coordinates = [lat, lng]
-        this.setState({ location })
-        return this.restaurantService
-          .createRestaurant(this.state)
+        const location = { ...this.state.location };
+        location.coordinates = [lat, lng];
+        this.setState({ location });
+        return this.restaurantService.createRestaurant(this.state);
       })
       .then((response) => {
         console.log(response.data);
@@ -102,7 +101,7 @@ class RestaurantForm extends Component {
               </Form.Group>
 
               <>
-                <Form.Label>Rango de precios</Form.Label>
+                <Form.Label>Ticket medio</Form.Label>
                 <option value={this.state.priceRange}>
                   {this.state.priceRange}€
                 </option>

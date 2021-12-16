@@ -97,9 +97,8 @@ class RestaurantCard extends Component {
                   <hr></hr>
                 </div>
                 <div className="text-selector">
-                  <p className="subtittle">Rango de precios</p>
-                  {this.props.restaurant.priceRange}
-                  <hr></hr>
+                  <p className="subtittle">Ticket medio</p>
+                  {this.props.restaurant.priceRange} €<hr></hr>
                 </div>
                 <div className="text-selector">
                   <p className="subtittle">Capacidad</p>
