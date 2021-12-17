@@ -25,7 +25,7 @@ class ReservationsUserCard extends Component {
   render() {
     return (
       <Col md={4} style={{ overflow: "hidden" }}>
-        <Card>
+        <Card id="coaster-card">
           <Card.Img
             variant="top"
             src={this.props.reservation.restaurantId.imageURL}

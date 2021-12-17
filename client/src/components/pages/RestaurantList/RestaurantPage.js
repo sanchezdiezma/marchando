@@ -71,27 +71,33 @@ class RestaurantDetails extends Component {
 
     return (
       <Container style={{ paddingTop: "56px" }}>
-        <h1>Detalles</h1>
+        
+        <h2 className=" admin-title"> - Detalles del Restaurante - </h2>
 
         <Row className="justify-content-around">
           <Col md={6} style={{ overflow: "hidden" }}>
+            
             <article>
-              <h2>{name}</h2>
-              <div>
-                <p>{direction}</p>
-                <hr />
-                <br />
-                <p> {description}</p>
-                <p> {priceRange}</p>
-                <p> {capacity}</p>
-                <p> {typeOfKitchen}</p>
-                <p> {specialInfo}</p>
-                <p> {status}</p>
+              
+              <div className="card-new">
+
+                <br/>
+                <h3>{name}</h3>
+                <p>Dirección - {direction}</p>
+                <p>Descripción - {description}</p>
+                <p>Rango de precios -  {priceRange}</p>
+                <p>Aforo -  {capacity}</p>
+                <p>Tipo de cocina -  {typeOfKitchen}</p>
+                <p>Información adicional -  {specialInfo}</p>
+                <p>Estado - {status}</p>
+
               </div>
+                
             </article>
+
           </Col>
           <Col md={4}>
-            <img src={imageURL} alt={name}></img>
+            <img src={imageURL}></img>
           </Col>
         </Row>
       </Container>

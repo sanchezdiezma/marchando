@@ -24,8 +24,8 @@ function Home() {
           </div>
           <div className="text">
             <p>
-              Si tienes un restaurante no pierdas parte del pastel de tu negocio, gestiona
-              de manera eficiente las cancelaciones de última hora con la ayuda de Marchando.
+              Si tienes un restaurante no pierdas parte del pastel de tu negocio y gestiona 
+              de manera eficiente las cancelaciones de última hora con la ayuda de Marchando
             </p>
           </div>
         </div>

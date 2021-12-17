@@ -39,12 +39,8 @@ class App extends Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
         <Navbar  storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
         <main >
-=======
-        <Navbar storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
->>>>>>> f3d167c538a6cb3f0fd412ebdcb319de2cac65f7
         <Switch>
           <Route path="/" exact strict render={() => <Home></Home>}></Route>
           <Route
@@ -101,15 +97,8 @@ class App extends Component {
           />
           <Route
             path="/restaurantes"
-<<<<<<< HEAD
             render={(props) => <ApprovedRestaurants loggedUser={this.state.loggedUser} />}
           /> 
-=======
-            render={(props) => (
-              <ApprovedRestaurants loggedUser={this.state.loggedUser} />
-            )}
-          />
->>>>>>> f3d167c538a6cb3f0fd412ebdcb319de2cac65f7
           <Route
             path="/userProfile"
             render={(props) => (
