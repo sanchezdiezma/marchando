@@ -143,7 +143,7 @@ class RestaurantCard extends Component {
                   </Button>
                 </div>
               )}
-              {this.props.loggedUser.role === "USER" && (
+              {this.props.loggedUser?.role === "USER" && (
                 <div className="d-flex justify-content-md-center">
                   <Button
                     onClick={this.openModal}
