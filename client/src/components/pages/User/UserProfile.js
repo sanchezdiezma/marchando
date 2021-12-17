@@ -31,6 +31,7 @@ class UserProfile extends Component {
         <Row className="justify-content-around">
           <h2 className="admin-title">- Estas son todas tus reservas -</h2>
           {this.state.reservations?.map((reservation) => (
+            
             <ReservationsUserCard
               key={reservation._id}
               reservation={reservation}

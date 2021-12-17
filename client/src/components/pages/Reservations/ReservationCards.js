@@ -41,7 +41,7 @@ class ReservationCard extends Component {
   render() {
     return (
       <Container style={{ paddingTop: "56px" }}>
-        <Col md={{span: 6, offset: 3}} style={{ overflow: "hidden" }}>
+        <Col md={{span: 4, offset: 3}} style={{ overflow: "hidden" }}>
           
         <Card>
           <Card.Img variant="top" src={this.props.restaurant.imageURL} />
